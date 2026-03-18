@@ -1,0 +1,25 @@
++++
+title = '【筆記】Windows Command 剪貼簿效果'
+date = '2024-05-13T14:54:19'
+slug = '-筆記-Windows-Command-剪貼簿效果'
+url = '/2024/05/13/-筆記-Windows-Command-剪貼簿效果/'
+description = ''
+categories = ['筆記', '生活雜記']
+tags = []
+keywords = ['CLI']
+image = '/image/20240526_12-05-25.png'
++++
+
+## Clip 命令
+windows 有提供很方便的剪貼簿語法，可以透過 `clip` 來將指令或檔案輸出結果複製到剪貼簿中，這樣就可以直接貼上到其他地方。
+```shell
+  command | CLIP
+  CLIP < filename.txt
+```
+
+### 範例
+下方為範例，將 `Hello World` 輸出到剪貼簿中，或是將 `temp.txt` 的內容輸出到剪貼簿中。
+```shell
+  echo "Hello World" | clip
+  clip < temp.txt
+```
