@@ -1,0 +1,14 @@
+{{- $pages := where site.RegularPages "RelPermalink" "ne" "/search/" -}}
+[
+{{- range $index, $page := $pages -}}
+  {{- if gt $index 0 }},{{ end -}}
+  {
+    "title": {{ $page.LinkTitle | jsonify }},
+    "permalink": {{ $page.RelPermalink | jsonify }},
+    "section": {{ $page.Section | jsonify }},
+    "summary": {{ (or $page.Description ($page.Summary | plainify)) | truncate 200 | jsonify }},
+    "content": {{ ($page.Plain | truncate 4000) | jsonify }},
+    "date": {{ ($page.Date.Format "2006-01-02") | jsonify }}
+  }
+{{- end -}}
+]

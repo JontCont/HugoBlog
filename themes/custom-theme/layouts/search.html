@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="search-page card-surface">
+    <h1>站內搜尋</h1>
+    <p class="search-page__lead">輸入關鍵字即可搜尋文章、頁面內容與摘要。</p>
+
+    <form class="search-form" action="/search/" method="get">
+      <input id="search-query-input" data-search-input name="q" type="search" placeholder="例如：Playwright、C#、Docker" autocomplete="off">
+      <button type="submit">搜尋</button>
+    </form>
+
+    <section class="search-history" aria-label="搜尋歷史">
+      <div class="search-history__head">
+        <h2>快速搜尋</h2>
+        <button type="button" id="search-history-clear" class="search-history__clear">清除</button>
+      </div>
+      <div id="search-history-list" class="search-history__list"></div>
+    </section>
+
+    <p id="search-status" class="search-status">請輸入關鍵字開始搜尋。</p>
+    <div id="search-results" class="search-results"></div>
+  </section>
+{{ end }}
