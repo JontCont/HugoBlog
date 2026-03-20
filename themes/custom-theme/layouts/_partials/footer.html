@@ -1,1 +1,13 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{ $postCount := len (where site.RegularPages "Section" "posts") }}
+<div class="footer-shell card-surface">
+	<div>
+		<p class="footer-shell__title">{{ site.Title }}</p>
+		<p class="footer-shell__description">用更清楚的版面整理 {{ $postCount }} 篇技術筆記，讓內容更適合慢慢閱讀與快速查找。</p>
+	</div>
+	<div class="footer-shell__meta">
+		<a href="/archives/">文章歸檔</a>
+		<a href="/tags/">標籤</a>
+		<a href="/about/">關於我</a>
+	</div>
+	<p class="footer-shell__copyright">Copyright {{ now.Year }}. All rights reserved.</p>
+</div>

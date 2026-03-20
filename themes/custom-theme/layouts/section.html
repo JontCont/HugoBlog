@@ -1,10 +1,44 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+  {{ $pages := .RegularPages.ByDate.Reverse }}
+  <section class="section-simple-head card-surface">
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+      <div>{{ .Content }}</div>
+    {{ else }}
+      <p>共 {{ len $pages }} 篇內容。</p>
+    {{ end }}
+  </section>
+
+  <section class="blog-layout">
+    <div class="blog-main">
+      {{ range $pages }}
+        {{ $post := . }}
+        <article class="entry-card">
+          {{ with .Params.image }}
+            <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+              <img class="entry-card__cover" src="{{ . }}" alt="{{ $post.Title }}">
+            </a>
+          {{ end }}
+          <div class="entry-card__body">
+            <div class="entry-card__meta">
+              {{ with .GetTerms "categories" }}
+                <a href="{{ (index . 0).RelPermalink }}" class="entry-card__category">{{ (index . 0).LinkTitle }}</a>
+              {{ end }}
+              <time datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+            </div>
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 135 }}{{ end }}</p>
+            <div class="entry-card__footer">
+              {{ with .GetTerms "tags" }}
+                <div class="entry-card__tags">
+                  {{ range first 2 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+                </div>
+              {{ end }}
+              <a class="entry-card__more" href="{{ .RelPermalink }}">閱讀全文</a>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
 {{ end }}

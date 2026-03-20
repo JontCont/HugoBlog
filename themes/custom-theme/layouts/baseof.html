@@ -3,15 +3,22 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
+<body class="page-kind-{{ .Kind }}{{ with .Section }} section-{{ . | urlize }}{{ end }}">
+  <div class="site-backdrop" aria-hidden="true">
+    <div class="site-backdrop__orb site-backdrop__orb--one"></div>
+    <div class="site-backdrop__orb site-backdrop__orb--two"></div>
+    <div class="site-backdrop__grid"></div>
+  </div>
+  <div class="site-shell">
+    <header class="site-header">
+      {{ partial "header.html" . }}
+    </header>
+    <main class="site-main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="site-footer">
+      {{ partial "footer.html" . }}
+    </footer>
+  </div>
 </body>
 </html>

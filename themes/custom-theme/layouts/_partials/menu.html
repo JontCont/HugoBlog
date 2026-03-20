@@ -11,8 +11,8 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
+  <nav class="site-nav" aria-label="主選單">
+    <ul class="site-nav__list">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -33,7 +33,28 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li>
+    {{- if .HasChildren }}
+    <li class="site-nav__item site-nav__item--dropdown">
+      <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" type="button">
+        {{ $name }}
+        <svg class="dropdown-chevron" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="dropdown-panel" role="menu">
+        {{- range .Children }}
+          {{- $ca := dict "href" .URL }}
+          {{- if $page.IsMenuCurrent .Menu . }}
+            {{- $ca = merge $ca (dict "class" "active" "aria-current" "page") }}
+          {{- end }}
+          <li role="none"><a role="menuitem"
+            {{- range $k, $v := $ca }}
+              {{- with $v }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{- end }}
+            {{- end -}}
+          >{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </li>
+    {{- else }}
+    <li class="site-nav__item">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}
@@ -41,11 +62,7 @@ Renders a menu for the given menu ID.
           {{- end }}
         {{- end -}}
       >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
     </li>
+    {{- end }}
   {{- end }}
 {{- end }}

@@ -1,10 +1,52 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  {{ $showToc := true }}
+  {{ with site.Params.article.showToc }}{{ $showToc = . }}{{ end }}
+  {{ $tocHtml := .TableOfContents }}
+  {{ $hasToc := and $showToc (gt (len (findRE "<li" $tocHtml)) 0) }}
+  {{ $tocTitle := "文章目錄" }}
+  {{ with site.Params.article.tocTitle }}{{ $tocTitle = . }}{{ end }}
+  {{ $tocSticky := true }}
+  {{ with site.Params.article.tocSticky }}{{ $tocSticky = . }}{{ end }}
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <section class="article-layout{{ if $hasToc }} article-layout--with-toc{{ end }}">
+    <article class="article-shell card-surface">
+      <header class="article-header">
+        <p class="article-header__eyebrow">{{ if eq .Section "posts" }}Article{{ else }}Page{{ end }}</p>
+        <h1>{{ .Title }}</h1>
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        {{ with .Description }}
+          <p class="article-description">{{ . }}</p>
+        {{ end }}
+
+        {{ if eq .Section "posts" }}
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := .Date | time.Format ":date_long" }}
+          <div class="article-meta">
+            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            {{ with .GetTerms "categories" }}
+              <span>{{ (index . 0).LinkTitle }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </header>
+
+      <div class="article-content">
+        {{ .Content }}
+      </div>
+
+      <footer class="article-footer">
+        {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      </footer>
+    </article>
+
+    {{ if $hasToc }}
+      <aside class="article-toc-shell card-surface{{ if $tocSticky }} article-toc-shell--sticky{{ end }}" aria-label="{{ $tocTitle }}">
+        <p class="article-toc-shell__title">{{ $tocTitle }}</p>
+        <div class="article-toc">
+          {{ $tocHtml }}
+        </div>
+      </aside>
+    {{ end }}
+  </section>
 {{ end }}

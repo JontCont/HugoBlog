@@ -1,9 +1,108 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $paginator := .Paginate ($posts.ByDate.Reverse) 12 }}
+  <section class="blog-layout">
+    <div class="blog-main">
+      {{ range $paginator.Pages }}
+        {{ $post := . }}
+        <article class="entry-card">
+          {{ with .Params.image }}
+            <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+              <img class="entry-card__cover" src="{{ . }}" alt="{{ $post.Title }}">
+            </a>
+          {{ end }}
+          <div class="entry-card__body">
+            <div class="entry-card__meta">
+              {{ with .GetTerms "categories" }}
+                <a href="{{ (index . 0).RelPermalink }}" class="entry-card__category">{{ (index . 0).LinkTitle }}</a>
+              {{ end }}
+              <time datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+            </div>
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 135 }}{{ end }}</p>
+            <div class="entry-card__footer">
+              {{ with .GetTerms "tags" }}
+                <div class="entry-card__tags">
+                  {{ range first 2 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+                </div>
+              {{ end }}
+              <a class="entry-card__more" href="{{ .RelPermalink }}">閱讀全文</a>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination" aria-label="文章分頁">
+          {{ if $paginator.HasPrev }}
+            <a class="pagination__link" href="{{ $paginator.Prev.URL }}" rel="prev">← 上一頁</a>
+          {{ else }}
+            <span class="pagination__link pagination__link--disabled">← 上一頁</span>
+          {{ end }}
+
+          {{ $current := $paginator.PageNumber }}
+          {{ $total := $paginator.TotalPages }}
+          {{ $window := 2 }}
+          {{ $start := sub $current $window }}
+          {{ $end := add $current $window }}
+          {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+          {{ if gt $end $total }}{{ $end = $total }}{{ end }}
+
+          <div class="pagination__numbers">
+            {{ if gt $start 1 }}
+              <a class="pagination__number" href="{{ (index $paginator.Pagers 0).URL }}">1</a>
+              {{ if gt $start 2 }}
+                <span class="pagination__ellipsis">…</span>
+              {{ end }}
+            {{ end }}
+
+            {{ range $p := $paginator.Pagers }}
+              {{ if and (ge $p.PageNumber $start) (le $p.PageNumber $end) }}
+                {{ if eq $p.PageNumber $current }}
+                  <span class="pagination__number pagination__number--active">{{ $p.PageNumber }}</span>
+                {{ else }}
+                  <a class="pagination__number" href="{{ $p.URL }}">{{ $p.PageNumber }}</a>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+
+            {{ if lt $end $total }}
+              {{ if lt $end (sub $total 1) }}
+                <span class="pagination__ellipsis">…</span>
+              {{ end }}
+              <a class="pagination__number" href="{{ (index $paginator.Pagers (sub $total 1)).URL }}">{{ $total }}</a>
+            {{ end }}
+          </div>
+
+          {{ if $paginator.HasNext }}
+            <a class="pagination__link" href="{{ $paginator.Next.URL }}" rel="next">下一頁 →</a>
+          {{ else }}
+            <span class="pagination__link pagination__link--disabled">下一頁 →</span>
+          {{ end }}
+        </nav>
+      {{ end }}
+    </div>
+
+    <aside class="blog-sidebar">
+      <section class="sidebar-card">
+        <h3>關於本站</h3>
+        <p>{{ or site.Params.description "熱愛前端與軟體開發的學習筆記，記錄實作過程與踩坑心得。" }}</p>
+      </section>
+
+      <section class="sidebar-card">
+        <h3>文章分類</h3>
+        <ul class="sidebar-list">
+          {{ range site.Taxonomies.categories.ByCount }}
+            <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a><span>{{ .Count }}</span></li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="sidebar-card sidebar-card--accent">
+        <h3>訂閱新文章</h3>
+        <p>每週更新技術內容，歡迎收藏本站。</p>
+        <a href="/posts/" class="sidebar-button">瀏覽文章</a>
+      </section>
+    </aside>
+  </section>
 {{ end }}
