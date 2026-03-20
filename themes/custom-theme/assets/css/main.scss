@@ -1,5 +1,5 @@
-@import "components/header.css";
-@import "components/footer.css";
+@import "components/header.scss";
+@import "components/footer.scss";
 
 :root {
   --bg: #f5f7fb;
@@ -871,6 +871,55 @@ body {
   margin: 0.9rem 0 0;
 }
 
+.search-history {
+  margin-top: 0.85rem;
+}
+
+.search-history__head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-history__head h2 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.search-history__clear {
+  background: transparent;
+  border: none;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.15rem 0.25rem;
+}
+
+.search-history__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+
+.search-history__item {
+  background: #f5f7ff;
+  border: 1px solid #dbe3ff;
+  border-radius: 999px;
+  color: var(--primary-deep);
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.32rem 0.65rem;
+}
+
+.search-history__empty {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 .search-results {
   display: grid;
   gap: 0.65rem;
@@ -927,5 +976,74 @@ body {
 
   .search-form {
     flex-direction: column;
+  }
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pagination__link {
+  background: #fff;
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+}
+
+.pagination__link--disabled {
+  color: var(--text-soft);
+  opacity: 0.65;
+}
+
+.pagination__numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.pagination__ellipsis {
+  align-items: center;
+  color: var(--text-soft);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 700;
+  height: 2rem;
+  justify-content: center;
+  min-width: 1.2rem;
+}
+
+.pagination__number {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--surface-border);
+  border-radius: 9px;
+  color: var(--text-soft);
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 700;
+  height: 2rem;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0 0.55rem;
+}
+
+.pagination__number--active {
+  background: #eef2ff;
+  border-color: #dbe3ff;
+  color: var(--primary-deep);
+}
+
+@media (max-width: 640px) {
+  .pagination {
+    flex-direction: column;
+    gap: 0.6rem;
   }
 }
