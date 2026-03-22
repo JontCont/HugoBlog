@@ -4,16 +4,12 @@
   {{ partial "head.html" . }}
 </head>
 <body class="page-kind-{{ .Kind }}{{ with .Section }} section-{{ . | urlize }}{{ end }}">
-  <div class="site-backdrop" aria-hidden="true">
-    <div class="site-backdrop__orb site-backdrop__orb--one"></div>
-    <div class="site-backdrop__orb site-backdrop__orb--two"></div>
-    <div class="site-backdrop__grid"></div>
-  </div>
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
   <header class="site-header">
     {{ partial "header.html" . }}
   </header>
   <div class="site-shell">
-    <main class="site-main">
+    <main class="site-main" id="main-content">
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer">

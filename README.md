@@ -81,7 +81,7 @@ hugo new posts/YYYY-MM-DD-文章標題.md
 ```toml
 baseURL = 'http://localhost:1313/'
 languageCode = 'zh-TW'
-title = '我的網站'
+title = 'JConte'
 theme = 'custom-theme'
 ```
 

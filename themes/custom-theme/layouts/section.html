@@ -5,7 +5,7 @@
     {{ if .Content }}
       <div>{{ .Content }}</div>
     {{ else }}
-      <p>共 {{ len $pages }} 篇內容。</p>
+      <p>{{ T "sectionCount" (dict "Count" (len $pages)) }}</p>
     {{ end }}
   </section>
 
@@ -41,7 +41,7 @@
                   {{ range first 2 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
                 </div>
               {{ end }}
-              <a class="entry-card__more" href="{{ .RelPermalink }}">閱讀全文</a>
+              <a class="entry-card__more" href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
             </div>
           </div>
         </article>

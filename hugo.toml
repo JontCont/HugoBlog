@@ -1,7 +1,8 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'zh-TW'
-title = '我的網站'
+title = 'JConte'
 theme = 'custom-theme'
+
 
 [[menus.main]]
 	name   = '首頁'
@@ -9,14 +10,15 @@ theme = 'custom-theme'
 	weight = 1
 
 [[menus.main]]
-	name   = '文章'
-	url    = '/posts/'
+	name   = '標籤'
+	url    = '/tags/'
 	weight = 2
 
 [[menus.main]]
-	name   = '標籤'
-	url    = '/tags/'
-	weight = 3
+	name   = '關於'
+	url    = '/about/'
+	weight     = 3
+
 
 [[menus.main]]
 	identifier = 'more'
@@ -24,41 +26,12 @@ theme = 'custom-theme'
 	url        = '#'
 	weight     = 4
 
-[[menus.main]]
-	name   = '關於'
-	url    = '/about/'
-	parent = 'more'
-	weight = 1
 
 [[menus.main]]
-	name   = '友鏈'
-	url    = '/links/'
-	parent = 'more'
-	weight = 2
-
-[[menus.main]]
-	name   = '圖片'
+	name   = '圖片檔'
 	url    = '/gallery/'
 	parent = 'more'
 	weight = 3
-
-[[menus.main]]
-	name   = '音樂'
-	url    = '/music/'
-	parent = 'more'
-	weight = 4
-
-[[menus.main]]
-	name   = '筆記'
-	url    = '/notes/'
-	parent = 'more'
-	weight = 5
-
-[[menus.main]]
-	name   = '留言'
-	url    = '/comment/'
-	parent = 'more'
-	weight = 6
 
 [params.article]
 	showToc = true

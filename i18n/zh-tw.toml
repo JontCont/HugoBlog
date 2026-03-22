@@ -1,0 +1,104 @@
+[siteSubtitle]
+other = "把技術筆記整理成更容易閱讀與搜尋的知識庫。"
+
+[skipToContent]
+other = "跳至主要內容"
+
+[search]
+other = "搜尋"
+
+[siteSearch]
+other = "站內搜尋"
+
+[searchPlaceholder]
+other = "搜尋文章、標籤、技術關鍵字..."
+
+[searchKeyword]
+other = "搜尋關鍵字"
+
+[closeSearch]
+other = "關閉搜尋"
+
+[openMenu]
+other = "開啟選單"
+
+[mobileMenu]
+other = "行動版選單"
+
+[displayMode]
+other = "顯示模式"
+
+[listView]
+other = "列表"
+
+[gridView]
+other = "格狀"
+
+[readMore]
+other = "閱讀全文"
+
+[postPagination]
+other = "文章分頁"
+
+[prevPage]
+other = "上一頁"
+
+[nextPage]
+other = "下一頁"
+
+[aboutSite]
+other = "關於本站"
+
+[aboutSiteDescription]
+other = "熱愛前端與軟體開發的學習筆記，記錄實作過程與踩坑心得。"
+
+[postCategories]
+other = "文章分類"
+
+[subscribeNewPosts]
+other = "訂閱新文章"
+
+[weeklyUpdateMessage]
+other = "每週更新技術內容，歡迎收藏本站。"
+
+[browsePosts]
+other = "瀏覽文章"
+
+[sectionCount]
+other = "共 {{ .Count }} 篇內容。"
+
+[articleToc]
+other = "文章目錄"
+
+[articleEyebrow]
+other = "文章"
+
+[pageEyebrow]
+other = "頁面"
+
+[backHome]
+other = "回首頁"
+
+[searchLead]
+other = "輸入關鍵字即可搜尋文章、頁面內容與摘要。"
+
+[searchExamplePlaceholder]
+other = "例如：Playwright、C#、Docker"
+
+[searchHistory]
+other = "搜尋歷史"
+
+[quickSearch]
+other = "快速搜尋"
+
+[clear]
+other = "清除"
+
+[searchPromptStart]
+other = "請輸入關鍵字開始搜尋。"
+
+[footerDescription]
+other = "用更清楚的版面整理 {{ .Count }} 篇技術筆記，讓內容更適合慢慢閱讀與快速查找。"
+
+[copyrightText]
+other = "Copyright {{ .Year }}. All rights reserved."

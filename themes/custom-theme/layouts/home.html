@@ -3,9 +3,9 @@
   {{ $paginator := .Paginate ($posts.ByDate.Reverse) 12 }}
   <section class="blog-layout">
     <div class="blog-main-col">
-      <div class="view-toggle" role="group" aria-label="顯示模式">
-        <button type="button" class="view-toggle__btn" data-view-btn="list">≡ 列表</button>
-        <button type="button" class="view-toggle__btn" data-view-btn="grid">⊞ 格狀</button>
+      <div class="view-toggle" role="group" aria-label="{{ T "displayMode" }}">
+        <button type="button" class="view-toggle__btn" data-view-btn="list">≡ {{ T "listView" }}</button>
+        <button type="button" class="view-toggle__btn" data-view-btn="grid">⊞ {{ T "gridView" }}</button>
       </div>
       <div class="blog-main" id="blog-main">
       {{ range $paginator.Pages }}
@@ -38,18 +38,19 @@
                   {{ range first 2 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
                 </div>
               {{ end }}
-              <a class="entry-card__more" href="{{ .RelPermalink }}">閱讀全文</a>
+              <a class="entry-card__more" href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
             </div>
           </div>
         </article>
       {{ end }}
+      </div>
 
       {{ if gt $paginator.TotalPages 1 }}
-        <nav class="pagination" aria-label="文章分頁">
+        <nav class="pagination" aria-label="{{ T "postPagination" }}">
           {{ if $paginator.HasPrev }}
-            <a class="pagination__link" href="{{ $paginator.Prev.URL }}" rel="prev">← 上一頁</a>
+            <a class="pagination__link" href="{{ $paginator.Prev.URL }}" rel="prev">← {{ T "prevPage" }}</a>
           {{ else }}
-            <span class="pagination__link pagination__link--disabled">← 上一頁</span>
+            <span class="pagination__link pagination__link--disabled">← {{ T "prevPage" }}</span>
           {{ end }}
 
           {{ $current := $paginator.PageNumber }}
@@ -87,23 +88,22 @@
           </div>
 
           {{ if $paginator.HasNext }}
-            <a class="pagination__link" href="{{ $paginator.Next.URL }}" rel="next">下一頁 →</a>
+            <a class="pagination__link" href="{{ $paginator.Next.URL }}" rel="next">{{ T "nextPage" }} →</a>
           {{ else }}
-            <span class="pagination__link pagination__link--disabled">下一頁 →</span>
+            <span class="pagination__link pagination__link--disabled">{{ T "nextPage" }} →</span>
           {{ end }}
         </nav>
       {{ end }}
-      </div>
     </div>
 
     <aside class="blog-sidebar">
       <section class="sidebar-card">
-        <h3>關於本站</h3>
-        <p>{{ or site.Params.description "熱愛前端與軟體開發的學習筆記，記錄實作過程與踩坑心得。" }}</p>
+        <h3>{{ T "aboutSite" }}</h3>
+        <p>{{ or site.Params.description (T "aboutSiteDescription") }}</p>
       </section>
 
       <section class="sidebar-card">
-        <h3>文章分類</h3>
+        <h3>{{ T "postCategories" }}</h3>
         <ul class="sidebar-list">
           {{ range first 10 site.Taxonomies.categories.ByCount }}
             <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a><span>{{ .Count }}</span></li>
@@ -112,9 +112,9 @@
       </section>
 
       <section class="sidebar-card sidebar-card--accent">
-        <h3>訂閱新文章</h3>
-        <p>每週更新技術內容，歡迎收藏本站。</p>
-        <a href="/posts/" class="sidebar-button">瀏覽文章</a>
+        <h3>{{ T "subscribeNewPosts" }}</h3>
+        <p>{{ T "weeklyUpdateMessage" }}</p>
+        <a href="/posts/" class="sidebar-button">{{ T "browsePosts" }}</a>
       </section>
     </aside>
   </section>

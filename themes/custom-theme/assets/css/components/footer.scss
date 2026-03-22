@@ -1,37 +1,49 @@
+/* =============================================================
+   SITE FOOTER
+============================================================= */
 .site-footer {
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .footer-shell {
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
   display: grid;
-  gap: 1rem;
-  padding: 1.1rem 1rem;
-}
-
-.footer-shell__title,
-.footer-shell__copyright {
-  margin: 0;
+  gap: 1.1rem;
+  padding: 1.4rem 1.5rem;
 }
 
 .footer-shell__title {
-  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   font-weight: 700;
+  margin: 0;
+}
+
+.footer-shell__description {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0.25rem 0 0;
 }
 
 .footer-shell__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem 1.25rem;
 }
 
-.footer-shell__meta a,
+.footer-shell__meta a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+.footer-shell__meta a:hover { color: var(--primary); }
+
 .footer-shell__copyright {
-  color: var(--text-soft);
-  font-size: 0.94rem;
-}
-
-.footer-shell__meta a:hover {
-  color: var(--primary);
+  color: var(--text-faint);
+  font-size: 0.82rem;
+  margin: 0;
 }

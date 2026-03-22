@@ -3,7 +3,7 @@
   {{ with site.Params.article.showToc }}{{ $showToc = . }}{{ end }}
   {{ $tocHtml := .TableOfContents }}
   {{ $hasToc := and $showToc (gt (len (findRE "<li" $tocHtml)) 0) }}
-  {{ $tocTitle := "文章目錄" }}
+  {{ $tocTitle := T "articleToc" }}
   {{ with site.Params.article.tocTitle }}{{ $tocTitle = . }}{{ end }}
   {{ $tocSticky := true }}
   {{ with site.Params.article.tocSticky }}{{ $tocSticky = . }}{{ end }}
@@ -11,7 +11,7 @@
   <section class="article-layout{{ if $hasToc }} article-layout--with-toc{{ end }}">
     <article class="article-shell card-surface">
       <header class="article-header">
-        <p class="article-header__eyebrow">{{ if eq .Section "posts" }}Article{{ else }}Page{{ end }}</p>
+        <p class="article-header__eyebrow">{{ if eq .Section "posts" }}{{ T "articleEyebrow" }}{{ else }}{{ T "pageEyebrow" }}{{ end }}</p>
         <h1>{{ .Title }}</h1>
 
         {{ with .Description }}
@@ -28,7 +28,7 @@
             {{ end }}
           </div>
           <div class="article-header__actions">
-            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← 回首頁</a>
+            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← {{ T "backHome" }}</a>
           </div>
         {{ end }}
       </header>
@@ -42,7 +42,7 @@
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
         {{ if eq .Section "posts" }}
           <div class="article-footer__actions">
-            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← 回首頁</a>
+            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← {{ T "backHome" }}</a>
           </div>
         {{ end }}
       </footer>

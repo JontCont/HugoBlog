@@ -1,0 +1,104 @@
+[siteSubtitle]
+other = "A tidy knowledge base for easier reading and search."
+
+[skipToContent]
+other = "Skip to main content"
+
+[search]
+other = "Search"
+
+[siteSearch]
+other = "Site Search"
+
+[searchPlaceholder]
+other = "Search posts, tags, and keywords..."
+
+[searchKeyword]
+other = "Search keyword"
+
+[closeSearch]
+other = "Close search"
+
+[openMenu]
+other = "Open menu"
+
+[mobileMenu]
+other = "Mobile menu"
+
+[displayMode]
+other = "Display mode"
+
+[listView]
+other = "List"
+
+[gridView]
+other = "Grid"
+
+[readMore]
+other = "Read more"
+
+[postPagination]
+other = "Post pagination"
+
+[prevPage]
+other = "Previous"
+
+[nextPage]
+other = "Next"
+
+[aboutSite]
+other = "About this site"
+
+[aboutSiteDescription]
+other = "Learning notes for frontend and software development, including practical tips and pitfalls."
+
+[postCategories]
+other = "Categories"
+
+[subscribeNewPosts]
+other = "Subscribe"
+
+[weeklyUpdateMessage]
+other = "New technical content is published weekly."
+
+[browsePosts]
+other = "Browse posts"
+
+[sectionCount]
+other = "Total {{ .Count }} items."
+
+[articleToc]
+other = "Table of Contents"
+
+[articleEyebrow]
+other = "Article"
+
+[pageEyebrow]
+other = "Page"
+
+[backHome]
+other = "Back to home"
+
+[searchLead]
+other = "Type a keyword to search posts, pages, and summaries."
+
+[searchExamplePlaceholder]
+other = "e.g. Playwright, C#, Docker"
+
+[searchHistory]
+other = "Search history"
+
+[quickSearch]
+other = "Quick search"
+
+[clear]
+other = "Clear"
+
+[searchPromptStart]
+other = "Enter a keyword to start searching."
+
+[footerDescription]
+other = "Organizing {{ .Count }} technical notes in a clearer layout for reading and quick lookup."
+
+[copyrightText]
+other = "Copyright {{ .Year }}. All rights reserved."
