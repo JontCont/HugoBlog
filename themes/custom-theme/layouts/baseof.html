@@ -9,10 +9,10 @@
     <div class="site-backdrop__orb site-backdrop__orb--two"></div>
     <div class="site-backdrop__grid"></div>
   </div>
+  <header class="site-header">
+    {{ partial "header.html" . }}
+  </header>
   <div class="site-shell">
-    <header class="site-header">
-      {{ partial "header.html" . }}
-    </header>
     <main class="site-main">
       {{ block "main" . }}{{ end }}
     </main>
