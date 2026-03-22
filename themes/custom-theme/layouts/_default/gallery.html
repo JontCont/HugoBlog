@@ -1,0 +1,52 @@
+{{ define "main" }}
+  {{ $entries := readDir "content/image" }}
+  {{ $images := slice }}
+
+  {{ range $entries }}
+    {{ if not .IsDir }}
+      {{ $name := .Name }}
+      {{ $lower := strings.ToLower $name }}
+      {{ if or
+        (strings.HasSuffix $lower ".jpg")
+        (strings.HasSuffix $lower ".jpeg")
+        (strings.HasSuffix $lower ".png")
+        (strings.HasSuffix $lower ".gif")
+        (strings.HasSuffix $lower ".webp")
+        (strings.HasSuffix $lower ".avif")
+      }}
+        {{ $images = $images | append $name }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  <section class="section-hero card-surface">
+    <p class="section-hero__eyebrow">Gallery</p>
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+      <div class="section-hero__lead">{{ .Content }}</div>
+    {{ else }}
+      <p class="section-hero__lead">共 {{ len $images }} 張圖片，來源：content/image。</p>
+    {{ end }}
+  </section>
+
+  <section class="gallery-auto card-surface">
+    <div class="gallery-auto__head">
+      <h2>圖片總覽</h2>
+      <span>{{ len $images }} items</span>
+    </div>
+
+    {{ if gt (len $images) 0 }}
+      <div class="gallery-auto__grid">
+        {{ range $images }}
+          {{ $src := (printf "/image/%s" .) | relURL }}
+          <a class="gallery-auto__item" href="{{ $src }}" target="_blank" rel="noopener">
+            <img src="{{ $src }}" alt="{{ . }}" loading="lazy">
+            <div class="gallery-auto__caption">{{ . }}</div>
+          </a>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="gallery-auto__empty">找不到可顯示的圖片，請確認 `content/image/` 內有 jpg/png/gif/webp/avif 檔案。</p>
+    {{ end }}
+  </section>
+{{ end }}

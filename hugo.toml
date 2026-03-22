@@ -33,6 +33,9 @@ theme = 'custom-theme'
 	parent = 'more'
 	weight = 3
 
+[outputs]
+  home = ['HTML', 'JSON']
+
 [params.article]
 	showToc = true
 	tocTitle = '文章目錄'

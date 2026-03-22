@@ -1,0 +1,14 @@
+{{- $pages := where site.RegularPages "Type" "!=" "page" -}}
+{{- $result := slice -}}
+{{- range $pages -}}
+  {{- $result = $result | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "permalink" .Permalink
+    "date" (dateFormat "2006-01-02" .Date)
+    "summary" .Summary
+    "content" .Plain
+    "tags" (delimit (.GetTerms "tags") ", ")
+  ) -}}
+{{- end -}}
+{{- $result | jsonify -}}
