@@ -102,3 +102,39 @@ other = "用更清楚的版面整理 {{ .Count }} 篇技術筆記，讓內容更
 
 [copyrightText]
 other = "Copyright {{ .Year }}. All rights reserved."
+
+[taxonomyEyebrow]
+other = "分類導覽"
+
+[taxonomyLead]
+other = "目前共有 {{ .Count }} 個標籤，點擊即可查看相關文章。"
+
+[allTags]
+other = "全部標籤"
+
+[termCountLabel]
+other = "{{ .Count }} 個標籤"
+
+[tagContainsPosts]
+other = "包含 {{ .Count }} 篇文章"
+
+[viewTagPosts]
+other = "查看文章"
+
+[noTermsFound]
+other = "目前沒有可顯示的標籤。"
+
+[termEyebrow]
+other = "標籤主題"
+
+[termLead]
+other = "此標籤目前收錄 {{ .Count }} 篇文章。"
+
+[relatedPosts]
+other = "相關文章"
+
+[backToTags]
+other = "回標籤總覽"
+
+[noPostsInTerm]
+other = "此標籤目前尚無文章。"

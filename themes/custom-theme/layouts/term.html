@@ -1,7 +1,62 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  {{ $posts := .Pages.ByDate.Reverse }}
+  {{ $postCount := len $posts }}
+
+  <section class="section-hero card-surface">
+    <p class="section-hero__eyebrow">{{ T "termEyebrow" }}</p>
+    <h1># {{ .Title }}</h1>
+    {{ if .Content }}
+      <div class="section-hero__lead">{{ .Content }}</div>
+    {{ else }}
+      <p class="section-hero__lead">{{ T "termLead" (dict "Count" $postCount) }}</p>
+    {{ end }}
+  </section>
+
+  <section class="content-section">
+    <div class="section-heading">
+      <h2>{{ T "relatedPosts" }}</h2>
+      <a class="section-heading__link" href="{{ "/tags/" | relLangURL }}">{{ T "backToTags" }}</a>
+    </div>
+
+    {{ if gt $postCount 0 }}
+      <div class="blog-main blog-main--grid">
+        {{ range $posts }}
+          {{ $post := . }}
+          <article class="entry-card">
+            {{ with .Params.image }}
+              {{ $img := . }}
+              {{ if strings.HasPrefix $img "http" }}
+                <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                  <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}">
+                </a>
+              {{ else }}
+                <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                  <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}">
+                </a>
+              {{ end }}
+            {{ end }}
+
+            <div class="entry-card__body">
+              <div class="entry-card__meta">
+                <span class="entry-card__category">#{{ $.Title }}</span>
+                <time datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+              </div>
+              <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 135 }}{{ end }}</p>
+              <div class="entry-card__footer">
+                {{ with .GetTerms "categories" }}
+                  <div class="entry-card__tags">
+                    {{ range first 2 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+                  </div>
+                {{ end }}
+                <a class="entry-card__more" href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
+              </div>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="taxonomy-shell__empty">{{ T "noPostsInTerm" }}</p>
+    {{ end }}
+  </section>
 {{ end }}

@@ -102,3 +102,39 @@ other = "Organizing {{ .Count }} technical notes in a clearer layout for reading
 
 [copyrightText]
 other = "Copyright {{ .Year }}. All rights reserved."
+
+[taxonomyEyebrow]
+other = "Taxonomy"
+
+[taxonomyLead]
+other = "There are currently {{ .Count }} tags. Click one to explore related posts."
+
+[allTags]
+other = "All tags"
+
+[termCountLabel]
+other = "{{ .Count }} tags"
+
+[tagContainsPosts]
+other = "Contains {{ .Count }} posts"
+
+[viewTagPosts]
+other = "View posts"
+
+[noTermsFound]
+other = "No terms available yet."
+
+[termEyebrow]
+other = "Tag Topic"
+
+[termLead]
+other = "This tag currently has {{ .Count }} posts."
+
+[relatedPosts]
+other = "Related posts"
+
+[backToTags]
+other = "Back to tags"
+
+[noPostsInTerm]
+other = "No posts found for this tag yet."
