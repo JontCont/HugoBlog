@@ -105,7 +105,7 @@
       <section class="sidebar-card">
         <h3>文章分類</h3>
         <ul class="sidebar-list">
-          {{ range site.Taxonomies.categories.ByCount }}
+          {{ range first 10 site.Taxonomies.categories.ByCount }}
             <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a><span>{{ .Count }}</span></li>
           {{ end }}
         </ul>

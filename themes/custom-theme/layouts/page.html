@@ -27,6 +27,9 @@
               <span>{{ (index . 0).LinkTitle }}</span>
             {{ end }}
           </div>
+          <div class="article-header__actions">
+            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← 回首頁</a>
+          </div>
         {{ end }}
       </header>
 
@@ -37,6 +40,11 @@
       <footer class="article-footer">
         {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        {{ if eq .Section "posts" }}
+          <div class="article-footer__actions">
+            <a class="article-back-home" href="{{ site.Home.RelPermalink }}">← 回首頁</a>
+          </div>
+        {{ end }}
       </footer>
     </article>
 
