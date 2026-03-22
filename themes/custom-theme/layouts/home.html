@@ -2,14 +2,26 @@
   {{ $posts := where site.RegularPages "Section" "posts" }}
   {{ $paginator := .Paginate ($posts.ByDate.Reverse) 12 }}
   <section class="blog-layout">
-    <div class="blog-main">
+    <div class="blog-main-col">
+      <div class="view-toggle" role="group" aria-label="顯示模式">
+        <button type="button" class="view-toggle__btn" data-view-btn="list">≡ 列表</button>
+        <button type="button" class="view-toggle__btn" data-view-btn="grid">⊞ 格狀</button>
+      </div>
+      <div class="blog-main" id="blog-main">
       {{ range $paginator.Pages }}
         {{ $post := . }}
         <article class="entry-card">
           {{ with .Params.image }}
-            <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
-              <img class="entry-card__cover" src="{{ . }}" alt="{{ $post.Title }}">
-            </a>
+            {{ $img := . }}
+            {{ if strings.HasPrefix $img "http" }}
+              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}">
+              </a>
+            {{ else }}
+              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}">
+              </a>
+            {{ end }}
           {{ end }}
           <div class="entry-card__body">
             <div class="entry-card__meta">
@@ -81,6 +93,7 @@
           {{ end }}
         </nav>
       {{ end }}
+      </div>
     </div>
 
     <aside class="blog-sidebar">

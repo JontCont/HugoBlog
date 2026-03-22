@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	initializeCodeCopyButtons();
 	initializeSiteSearch();
+	initializeViewToggle();
 });
 
 function initializeCodeCopyButtons() {
@@ -255,4 +256,39 @@ function initializeSiteSearch() {
 		input.value = initialQuery;
 		renderResults(initialQuery);
 	}
+}
+
+function initializeViewToggle() {
+	var blogMain = document.getElementById('blog-main');
+	if (!blogMain) return;
+
+	var COOKIE_KEY = 'blog-view-mode';
+
+	function getCookie(name) {
+		var match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+		return match ? decodeURIComponent(match[2]) : null;
+	}
+
+	function setCookie(name, value, days) {
+		var expires = new Date(Date.now() + days * 864e5).toUTCString();
+		document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+	}
+
+	function applyMode(mode) {
+		blogMain.classList.toggle('blog-main--grid', mode === 'grid');
+		document.querySelectorAll('[data-view-btn]').forEach(function (btn) {
+			btn.classList.toggle('view-toggle__btn--active', btn.dataset.viewBtn === mode);
+		});
+	}
+
+	var savedMode = getCookie(COOKIE_KEY) || 'list';
+	applyMode(savedMode);
+
+	document.querySelectorAll('[data-view-btn]').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			var mode = btn.dataset.viewBtn;
+			applyMode(mode);
+			setCookie(COOKIE_KEY, mode, 365);
+		});
+	});
 }

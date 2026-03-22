@@ -1,4 +1,4 @@
-baseURL = 'https://jontcont.github.io/HugoBlog/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'zh-TW'
 title = '我的網站'
 theme = 'custom-theme'

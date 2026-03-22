@@ -79,11 +79,14 @@ hugo new posts/YYYY-MM-DD-文章標題.md
 主要設定位於 [`hugo.toml`](hugo.toml)：
 
 ```toml
-baseURL = 'https://jontcont.github.io/HugoBlog/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'zh-TW'
 title = '我的網站'
 theme = 'custom-theme'
 ```
+
+> GitHub Pages 部署時會由 workflow 使用 `--baseURL` 覆蓋為線上網址，
+> 本機開發保持 localhost 設定即可。
 
 ## GitHub Pages 部署
 

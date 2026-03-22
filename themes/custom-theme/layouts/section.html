@@ -15,9 +15,16 @@
         {{ $post := . }}
         <article class="entry-card">
           {{ with .Params.image }}
-            <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
-              <img class="entry-card__cover" src="{{ . }}" alt="{{ $post.Title }}">
-            </a>
+            {{ $img := . }}
+            {{ if strings.HasPrefix $img "http" }}
+              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}">
+              </a>
+            {{ else }}
+              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+                <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}">
+              </a>
+            {{ end }}
           {{ end }}
           <div class="entry-card__body">
             <div class="entry-card__meta">
