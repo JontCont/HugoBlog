@@ -79,8 +79,32 @@ hugo new posts/YYYY-MM-DD-文章標題.md
 主要設定位於 [`hugo.toml`](hugo.toml)：
 
 ```toml
-baseURL = 'http://localhost:1313/'
+baseURL = 'https://jontcont.github.io/HugoBlog/'
 languageCode = 'zh-TW'
 title = '我的網站'
 theme = 'custom-theme'
 ```
+
+## GitHub Pages 部署
+
+本專案使用 GitHub Actions 自動部署至 GitHub Pages。
+
+### 一次性設定
+
+1. 到 GitHub Repository `Settings` -> `Pages`
+2. 將 `Source` 設為 `GitHub Actions`
+3. 確認 [`.github/workflows/hugo.yml`](.github/workflows/hugo.yml) 已存在
+
+### 發布流程
+
+```bash
+git push origin main
+```
+
+推送後會自動執行 Hugo build 並發布到 Pages。
+
+### 網址
+
+預設專案頁面網址：
+
+`https://jontcont.github.io/HugoBlog/`
