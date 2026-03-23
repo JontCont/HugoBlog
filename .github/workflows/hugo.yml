@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - stack-theme
   workflow_dispatch:
 
 permissions:
