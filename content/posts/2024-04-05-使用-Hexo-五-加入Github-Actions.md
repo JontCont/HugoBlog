@@ -25,7 +25,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 > #### 補充: ssh 區分
 > - 有 .pub 是公鑰
 > - 沒有副檔名是 私鑰
-> ![](/image/20240405_23-04-44.png)
+> 
 >
 > PS 若第一是使用 ssh-keygen 務必留意這個小東西只能用一次 repository ，如果你澳用在其他 repository 會被阻擋使用。
 
@@ -59,12 +59,12 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 目前設定方式要用在存放 github pages 才可以有效發行成功， 使用記得要勾選 **Allow write access** 。
 裡面輸入框請輸入公鑰並存檔即可，名字可以 _任意輸入_。
 
-![](/image/20240405_23-24-39.png)
-![](/image/20240405_23-25-01.png)
+
+
 
 
 然後私鑰要用在 **Actions secrets and variables** > **Repository secrets** ，名字取名為 *DEPLOY_KEY* 。
-![](/image/20240405_23-27-34.png)
+
 
 > [!NOTE]
 > #### 補充 : 存放原因

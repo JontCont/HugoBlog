@@ -26,13 +26,13 @@ image = '/image/20221228_22-45-03.png'
 1. 打開Android "DroidCamApp"
 2. 打開 PC "DroidCamApp.exe" 
 3. Pc "DroidCamApp"裡面輸入 Android 顯示的 "Wifi ip" 或是 "drive ip" 即可完成 
-![](/image/20221225_11-00-59.png)
-![](/image/20221225_11-02-47.png)
+
+
 
 ### 完成
 完成後，會變成如下面圖片一樣，如果想要變成直播工作也是不成問題，使用下來非常省成本。
-![](/image/20221225_11-25-40.png)
-![](/image/20221225_11-29-27.png)
+
+
 
  
 ## jquery-qrcode

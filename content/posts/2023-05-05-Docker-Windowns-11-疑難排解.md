@@ -32,7 +32,7 @@ Intel 和 AMD 虛擬化名稱:
 - 開啟說明 : [點擊連結](https://docs.microsoft.com/zh-tw/windows/wsl/install)
 
 安裝 WSL 方式可以透過指令方式安裝，也可以到 Windows Store 下載 ubuntu 來安裝。
-![](/image/20240505_13-17-44.png)
+
 
 
 

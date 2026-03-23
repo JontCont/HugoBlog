@@ -16,7 +16,7 @@ Angular 近期蠻多公司願意使用的一項框架，他使用Type-Script 來
 # Angular
 Angular 是基於 TypeScript 的開發平台。通常是指 "Angular 2+" 或 "Angular v2 及更高版本，框架由 Google 的 Angular 團隊以及社群共同領導。
 
-![](/img/Web/angular/Architecture_of_an_Angular_2_application.png)
+
 
 上圖。Angular 應用的架構。其主要的構造塊是模組、組件、模板、元資料、資料繫結、指令、服務和依賴注入。
 
@@ -36,24 +36,24 @@ Angular 是基於 TypeScript 的開發平台。通常是指 "Angular 2+" 或 "An
 ```cmd
 ng new useAngular
 ```
-![](/img/Web/angular/Snipaste_2022-06-12_09-50-37.png)
+
 
 
 ## 創建Pages
 第一次使用會不知道如何開始使用Angular，進入專案只有用到App資料夾。這邊範例使用VSC套件用[Angular Extension Pack](https://marketplace.visualstudio.com/items?itemName=doggy8088.angular-extension-pack)。
 
-![](/img/Web/angular/Snipaste_2022-06-12_09-51-47.png)
+
 
 
 下圖可以使用右鍵點選就可以快速道終端機，並幫你下好```ng g c ```指令。這邊我們創建一個Pages 為About。
 
-![](/img/Web/angular/Snipaste_2022-06-12_10-00-48.png)
-![](/img/Web/angular/Snipaste_2022-06-12_10-01-03.png)
-![](/img/Web/angular/Snipaste_2022-06-12_10-03-25.png)
+
+
+
 
 ## 設定router
 router 在Angular為app-Routing.module.ts，如果有使用dotnet MVC 會比較熟悉一點。
-![](/img/Web/angular/Snipaste_2022-06-12_10-05-06.png)
+
 
 Angular routing 是設定頁面位置。這邊我們用app-routing.module 加入我們剛才的pages，如下方寫法。
 ```ts

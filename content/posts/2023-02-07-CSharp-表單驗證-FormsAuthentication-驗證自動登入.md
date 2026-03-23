@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#']
 tags = ['C#', 'Form']
 keywords = ['Form', 'C#']
 image = '/image/20230207_22-54-41.png'
-weight = 1
 +++
 ## 前言
 最近需要開始撰寫 ASP.Net MVC，目前遇到Form驗證實例會有自動驗證登入，藉由這次機會來展現身手。

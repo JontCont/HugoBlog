@@ -18,8 +18,8 @@ image = '/img/Web/react/react_bg.png'
 
 ## Layout 
 本次的範例如下圖所示。我特別使用顏色框出那些功能，以展示它們是如何被拆分為元件的方式進行撰寫。
-![](/image/20230603_22-24-02.png)
-![](/image/20230603_22-27-37.png)
+
+
 
 ### 簡易引用元件 - Header
 這邊只顯示一部份，若要看完整請到 [github(StartFMS.Backend.Web)](https://github.com/JontCont/StartFMS.Backend.Web/tree/master-react)。

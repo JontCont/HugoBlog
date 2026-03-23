@@ -22,11 +22,11 @@ image = '/image/20240622_23-45-22.png'
 - 相關連結 : [Docker in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
 這套件可以讓你在 VS Code 中直接操作 docker ，不需要再開啟 terminal 來操作，而且也幫忙把 container 與 image 顯示出來，操作方面相當方便。
-![](/image/20240622_23-10-41.png)
+
 
 如果有顯示 failed to connect to docker daemon 之類訊息，請確認 docker hub 有沒有打開。主要原因是 docker 服務會透過 Docker Desktop 來打開，若要使用其方式打開可以參考 dockercli.exe 方式開啟。
 
-![](/image/20240622_23-13-08.png)
+
 
 ---
 ### 部屬 minimal api 專案
@@ -56,8 +56,8 @@ app.Run();
 dotnet publish /t:PublishContainer
 ```
 執行完成後，在 docker UI 上面可以看到 image 已經在裡面了，這邊我們可以直接選擇 image 來執行。
-![](/image/20240622_23-27-04.png)
-![](/image/20240622_23-27-47.png)
+
+
 
 
 ### 補充
@@ -71,7 +71,7 @@ dotnet publish /t:PublishContainer
 
 #### 三、利用 docker run 啟動 minimal api 專案
 我們這邊可以透過下拉選單上面的 ```run insteractive``` 來啟動 minimal api 專案，這邊我們可以看到執行結果。其實你們可以看到當我直接執行時候，他的行為是 rm 動作，當 container 停止時候會自動刪除。
-![](/image/20240622_23-30-57.png)
+
 
 因為是預設的行為，docker 預設是8080 port ，所以我們可以直接在瀏覽器上面輸入 [http://localhost:8080/](http://localhost:8080/) 來看到結果。如果剛好8080被使用可以透過 docker run --rm -p 8081:8080 來指定 port。
 

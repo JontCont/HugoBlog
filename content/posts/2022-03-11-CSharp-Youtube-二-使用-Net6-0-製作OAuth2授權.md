@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#', 'Youtube']
 tags = ['C#', 'Youtube', 'API']
 keywords = ['Form', 'C#']
 image = 'https://www.youtube.com/s/desktop/82a4cf4f/img/favicon_144x144.png'
-weight = 1
 +++
 
 ## 前言
@@ -16,15 +15,15 @@ weight = 1
 ## [Google Cloud API](https://cloud.google.com/apis?hl=zh-tw)
 ### 創建憑證
 選擇 OAuth 用戶端 ID 。如果不確定授權 URL 可以先跳過。
-![](/image/20230211_19-08-47.png)
-![](/image/20230211_19-09-31.png)
-![](/image/20230211_19-12-36.png)
+
+
+
 
 ## 創建專案
 架構需要驗證 OAuth2 先確認要設定 "重新導向 URI"，範例使用 ```https://localhost:999/Api/Google/Home``` 。
 ### 一、取得URL 
 Redirect URL 從 Youtube API 官方網文件可以找得到，原則上直接使用下圖位置的 URL 即可。參數傳值部分官方已經有提供使用方式，因為他有特定傳參數
-![](/image/20230211_19-29-11.png)
+
 
 - 文件參考 : [https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps#httprest](https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps#httprest)
 
@@ -148,9 +147,9 @@ Redirect URL 從 Youtube API 官方網文件可以找得到，原則上直接使
 
 ## 登入帳號
 把剛才製作的授權網址點開 ```https://localhost:999/Api/Google/Login``` 完成授權即可。
-![](/image/20230211_22-44-27.png)
-![](/image/20230211_22-45-45.png)
-![](/image/20230211_22-45-57.png)
+
+
+
 
 
 ## 文件參考

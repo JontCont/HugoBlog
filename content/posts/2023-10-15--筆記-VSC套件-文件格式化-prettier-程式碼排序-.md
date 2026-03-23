@@ -39,7 +39,7 @@ image = '/image/20231017_22-43-37.png'
 }
 ```
 3. vsc 搜尋列輸入 format document with... 選擇 prettier 讓他成為預設排版工具
-![](/image/20231015_22-49-38.png)
+
 
 
 之後排版就可以美美排版了。

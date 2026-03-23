@@ -45,7 +45,7 @@ temp = 2;
 
 為什麼會這樣呢？我們先來看看 C# 的變數型態，C# 的變數型態分為兩種，一種是 Value Type，一種是 Reference Type，Value Type 代表的是值型別，Reference Type 代表的是參考型別，Value Type 會將資料存放在 Stack 中，Reference Type 會將資料存放在 Heap 中，如下圖
 
-![](/image/20240128_00-05-59.png)
+
 
 因此我們可以知道，Value Type 是將資料存放在 Stack 中，因此當我們將變數複製一份出來，就會將資料複製一份出來，因此我們可以看到下方範例，當我們將 a 變數複製一份出來，並且修改 temp 變數，a 變數並不會跟著變更，因為他們是分開存放的，因此我們可以知道 Value Type 是將資料複製一份出來，並且存放在 Stack 中，因此當我們修改 temp 變數，a 變數並不會跟著變更，如下方範例
 

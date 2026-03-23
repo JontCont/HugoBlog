@@ -19,14 +19,14 @@ image = '/img/Web/js/reg_bg.png'
 
 第一次發現視窗太小，可以參考下方圖片。
 
-![](/img/Web/js/context/DevTools_001.png)
-![](/img/Web/js/context/DevTools_002.png)
+
+
 
 
 ## 開始使用
 使用方式是需要選擇主控台即可，其餘的先暫時不理會。
 
-![](/img/Web/js/context/DevTools_003.png)
+
 
 
 ### 初始化

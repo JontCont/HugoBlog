@@ -25,14 +25,14 @@ docker create -p 8080:80 --name web -i httpd
 ```
 
 稍微補充資訊，像是沒有特別指定 port 參數是不會有預設port ，如下圖顯示。
-![](/image/20221213_19-53-46.png)
+
 
 ### 執行畫面
 start沒有設定port參數，所以需要從 Container 設定 ，啟動後就可以使用 httpd畫面
 ```cmd
 docker start web
 ```
-![](/image/20221213_19-57-32.png)
+
 
 
 ## 刪除背景程式

@@ -18,7 +18,7 @@ image = '/image/20240708_10-47-34.png'
 #### 一、取得API Key
 
 點選我的帳戶 > API 存取金鑰 > 顯示，打開後複製這組金鑰。
-![](/image/20240708_09-33-26.png)
+
 
 #### 二、簡單實作 - 取得當前專案的Issue
 
@@ -57,9 +57,9 @@ foreach (var issue in issues)
 
 Azure 直接使用 PAT (Personal Access Token) 來當作 API Key，取得方式如下：
 這邊因為我單純展示如何使用，所以PAT權限我就給最高權限。
-![](/image/20240708_09-55-15.png)
-![](/image/20240708_09-55-34.png)
-![](/image/20240708_09-55-50.png)
+
+
+
 
 #### 二、簡單實作 - 建立工作項目
 ##### 2-1 安裝 NuGet 套件

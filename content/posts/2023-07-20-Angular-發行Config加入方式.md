@@ -15,16 +15,16 @@ image = '/img/Web/bg/Angular-bg-01.png'
 ## 安裝  URL Rewrite 2.0
 下載連結 : [點選我](https://www.iis.net/downloads/microsoft/url-rewrite)
 一開始需要安裝 URL Rewrite 2.0，安裝完後，就可以開始設定Config。(如果已經安裝過，可以跳過這步驟。)
-![](/image/20230901_22-32-39.png)
+
 
 ## 設定 Config
 選擇 IIS 管理員，選擇網站，點選 URL Rewrite。點選右邊新增規則，選擇空白規則。
-![](/image/20230901_22-33-25.png)
+
 
 從編輯輸入規則修改以下內容。若修改完可以直接套用即可，詳細內容可以參考下方參考文件。
-![](/image/20230901_22-34-53.png)
-![](/image/20230901_22-36-22.png)
-![](/image/20230901_22-37-20.png)
+
+
+
 
 ## 參考文件
 

@@ -23,15 +23,15 @@ windows Terminal 已經釋出三種版本 (一般、Preview、 Canary) ，UI 也
 - 相關連結 : [Terminal Canary](https://github.com/microsoft/terminal/discussions/16121)
 
 下載連結在 Github 上，可以直接下載安裝。
-![](/image/20241123_10-42-02.png)
+
 
 #### 1-2 加入 Copilot 功能
 請參考下方 GIF 步驟，可以看到如何加入 Copilot 功能。
-![](/image/20241122-17-17-54.gif)
+
 
 ### 1-3 新增快捷鍵
 為了增加活用度，我這邊取用跟 Vscode 一樣的快捷鍵 (ctrl + i)，可以參考下方步驟。
-![](/image/20241123_10-48-53.png)
+
 
 
 ### 二、使用方式
@@ -41,7 +41,7 @@ chat ui 有兩個功能，筆者覺得他們 icon 做得不太好辨認，以下
 - clear history : 清除歷史紀錄 (使用時機當 ai 發生幻覺或是紀錄太多)
 - export chat : 匯出對話紀錄 
 
-![](/image/20241123_10-52-33.png)
+
 
 **export chat 內容參考** 
 ```txt
@@ -55,8 +55,8 @@ Assistant:
 #### 2-2 自動帶入指令
 terminal 最大特色就是當 copilot 有建議時，可以直接帶入指令，這樣可以省去輸入的動作，包含程式碼部分。但缺點就在於換行的部分，這部分 copilot 會有點問題。
 
-![](/image/20241123_11-03-19.png)
-![](/image/20241123_11-03-06.png)
+
+
 
 
 #### 2-3 無法使用的 paste 

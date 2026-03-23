@@ -130,4 +130,4 @@ public override void MessageLocation() { }
 ```
 
 完成畫面如下，希望大家可以順利執行Line Bot 嚕。
-![](/image/20230402_18-19-58.png)
+

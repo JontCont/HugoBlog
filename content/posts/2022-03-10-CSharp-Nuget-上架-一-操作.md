@@ -25,7 +25,7 @@ GUI 需要下載 Microsoft store :【[NuGet Package Explorer](https://apps.micro
 ## 指令上傳
 - 下載點 : [請點我](https://www.nuget.org/downloads)
 下載完畢後，務必將 【解除封鎖】勾起來，不然會無法使用 ```nuget pack```指令。
-![](/image/20230310_19-59-20.png)
+
 
 安裝部分只需要丟到 ```C:\Windows\System32``` 即可，無需要個別丟在project 。
 
@@ -34,7 +34,7 @@ GUI 需要下載 Microsoft store :【[NuGet Package Explorer](https://apps.micro
 nuget spec [project]
 ```
 輸入方式請參考下方圖片
-![](/image/20230310_20-05-19.png)
+
 
 ### 創建 nupkg
 這動作是為了要把當前版本進行包裝，如果有多個版本可以嘗試 ```-c Release```。注意 : 每當要更新一個版本必須要更換版本號。
@@ -53,16 +53,16 @@ nuget push [project] [Api key] -source nuget.org
 
 ## GUI 上傳
 1. 點選編輯內容
-![](/image/20230310_20-17-10.png)
+
 
 2. 創建 Lib 資料夾
-![](/image/20230310_20-17-46.png)
+
 
 3. 選擇你要新增的版本號，並丟入 dll 檔
-![](/image/20230310_20-18-14.png)
+
 
 4. 按下 【Publish】進行發佈
-![](/image/20230310_20-19-39.png)
+
 
 publish之前需要加入 Api key 的動作，連結請參考上面提供。
 

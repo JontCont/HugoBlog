@@ -17,10 +17,10 @@ ASP.NET Core 模組 (ANCM) 是一個本機 IIS 模組，用於在 IIS 上托管 
 ANCM 可以透過兩種主要的模型來運行 ASP.NET Core 應用程序：
 
 - **In-process hosting model**：在這種模式下，ASP.NET Core 應用程序運行在 IIS 的工作進程（w3wp.exe）內。這樣可以減少數據傳輸的開銷，提升性能。
-![](/image/20240708_10-33-58.png)
+
 
 - **Out-of-process hosting model**：這種模式下，IIS 會將 HTTP 請求轉發給後端運行的 Kestrel 服務器（ASP.NET Core 的內置 Web 服務器）。這種方式具有更高的靈活性，允許後端進行更獨立的配置和管理。
-![](/image/20240708_10-34-42.png)
+
 
 此外，ANCM 還負責管理 ASP.NET Core 應用程序的進程，包括啟動、停止和監控應用程序的運行狀態。
 
@@ -38,11 +38,11 @@ ANCM 可以透過兩種主要的模型來運行 ASP.NET Core 應用程序：
 
 ### 一、In-process hosting model
 預設 ASP.NET Core 應用程序使用進程內托管模型(In-process hosting model)，可以在 IIS 的工作進程（w3wp.exe）內運行。
-![](/image/20240708_10-40-19.png)
+
 
 ### 二、Out-of-process hosting model
 如果將 ASP.NET Core 應用程序配置為使用進程外托管模型(Out-of-process hosting model)，則 IIS 會將 HTTP 請求轉發給後端運行的 Kestrel 服務器。下圖可以看到 dotnet process 和 w3wp process 分別運行在不同的process中
-![](/image/20240708_10-42-32.png)
+
 
 
 #### 補充 : 如何在 publish 時設定 ANCM 的運作方式

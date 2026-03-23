@@ -25,7 +25,7 @@ AdminLTE 3 支援多種框架和平台，包括 Angular、React、Vue、ASP.NET 
 
 ## 區分定義
 起手前，請依據這個大區塊方式切割。後期時候可以再把裡面內容再次切割，後續工作就不會太複雜。
-![](/image/20230508_20-15-39.png)
+
 
 
 ### 需要的動作
@@ -126,7 +126,7 @@ export default AppRouter;
 
 
 ## 加入 Header、Menu
-![](/image/20230508_20-31-34.png)
+
 
 
 ### Header.tsx
@@ -350,6 +350,6 @@ export default MenuSidebar;
 ## 完成後
 完成後如同下圖畫面。
 下篇會著重於如何看 adminLTE 結構以及規劃。
-![](/image/20230508_20-40-44.png)
+
 
 

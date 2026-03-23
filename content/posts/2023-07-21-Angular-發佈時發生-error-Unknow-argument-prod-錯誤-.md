@@ -20,7 +20,7 @@ ng build --configuration production
 ### 備註
 Angular 14 之後版本已經移除 ```--prod```指令，改為 ```--configuration production```。
 ### Angular Cli
-![](/image/20221201_16-10-33.png)
+
 
 
 ## 參考文件

@@ -22,7 +22,7 @@ NuGet\Install-Package StartFMS.Extensions.Configuration -Version 1.0.0
 ## 使用目的
 利用擴充方式減少呼叫的動作以及方便呼叫 Azure 設定、管理使用者密碼(secrets.json)等檔案。
 
-![](/image/20230405_11-36-23.png)
+
 
 ## 使用方式
 1. 使用 ```Config``` 呼叫

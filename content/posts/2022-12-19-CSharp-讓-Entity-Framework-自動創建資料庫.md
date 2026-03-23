@@ -36,7 +36,7 @@ using (var context = new BloggingContext())
 
 ### 二、Migrations
 可以利用Migrations檔案達到版控的效果，裡面還提供版本號讓後續維護更有彈性。
-![](/image/20230711_22-31-16.png)
+
 
 #### 2-1 前置作業
 1. 安裝套件

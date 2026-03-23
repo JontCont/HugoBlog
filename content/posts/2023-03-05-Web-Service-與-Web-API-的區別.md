@@ -7,7 +7,6 @@ categories = ['後端技術', 'API']
 tags = ['後端技術', 'API', 'Web Service', 'Web API']
 keywords = ['Net FrameWork', 'C#', 'Core']
 image = '/image/20230305_10-16-07.png'
-weight = 1
 +++
 
 # Web Service

@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
 image = 'https://d.line-scdn.net/stf/linecorp/en/pr/quickreply_en.png'
-weight = 1
 +++
 ## 使用NUGET
 1. [StartFMS.Extensions.Line](https://www.nuget.org/packages/StartFMS.Extensions.Line)
@@ -55,7 +54,7 @@ var config = Config.GetConfiguration<Startup>(); //加入設定檔
 
 ## (正篇) 使用Line Notify
 - [Line Notify](https://notify-bot.line.me/zh_TW/) 
-![](/image/20230406_10-14-15.png)
+
 
 1. 設定參數
 ```cs

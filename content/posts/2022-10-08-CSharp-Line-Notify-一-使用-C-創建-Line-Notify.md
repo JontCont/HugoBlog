@@ -6,7 +6,6 @@ description = ''
 categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
-weight = 1
 +++
 之前有已經結束Line Bot 簡易製作、使用方式，這是會使用Nottify 使用方式。目前為止Bot 製作上，Notift 不論是創建、呼叫、API 測試相對的比Bot 友善許多，Notify 可以應用很多方式(Exmpale : 監控、提示訊息、警示資訊等)。若有使用常駐、監聽伺服方式可以不妨加入Notify 功能。
 
@@ -26,10 +25,10 @@ Notify 是由 Line 官方提供，主要應用通知訊息使用與Bots應用上
 
 ## 創建Line Notify Project
 創建順序 : [Line Notify 官方] > [個人頁面]  >按下 [發行權杖(Token)] > 選擇 [透過1對1聊天接收Line Notify 的通知] > 複製 Line Notify Token 
-![](/img/dotnet/LineNotify/Snipaste_2022-10-08_22-20-10.png)
-![](/img/dotnet/LineNotify/Snipaste_2022-10-08_22-21-24.png)
-![](/img/dotnet/LineNotify/Snipaste_2022-10-08_22-22-00.png)
-![](/img/dotnet/LineNotify/Snipaste_2022-10-08_22-22-48.png)
+
+
+
+
 
 
 ## 使用C# WebApi
@@ -88,7 +87,7 @@ public class NotifyController : ControllerBase
     }
 }
 ```
-![](/img/dotnet/LineNotify/Snipaste_2022-10-08_23-03-58.png)
+
 
 以上步驟完成後，Notify 就已經可以正常回覆訊息，如果要更詳細使用方式可以參考官方提供的文件。
 

@@ -44,7 +44,7 @@ public class SampleResultFilterAttribute : Attribute, IResultFilter
 ```
 
 再所有的過濾器中，ResultFilter 是最後一個執行的過濾器，因此可以在這裡進行統一回傳格式、紀錄等等。因此我們可以利用這個特性來進行統一回傳格式。
-![](/image/20231218_22-32-41.png)
+
 
 ### 一、建立 ResultFilter
 

@@ -33,9 +33,9 @@ image = '/image/20230401_23-11-09.png'
 設定secrets 需要到 repository > settings > secrets > Action  
 name : 輸入可識別的名稱 ,ex : commit_secret
 value : token key
-![](/img/GitHub/action/3-1.jpg)
-![](/img/GitHub/action/3-2.jpg)
-![](/img/GitHub/action/3-3.jpg)
+
+
+
 
 ## 3. 創建 workflows
 這邊我直接奉上設定檔，如果讀者想要創建方式可以參考上一篇。 下方設定逐一說明。

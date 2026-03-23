@@ -26,7 +26,7 @@ image = '/image/20230302_10-12-45.png'
 git diff .\text1.txt .\text2.txt
 ```
 以下範例 : 
-![](/image/20230426_21-33-42.png)
+
 
 ### 二、資料夾比較
 這功能主要以資料夾互相比較結果，以上兩點為離線版使用的指令，相當實用。 (如果有資料夾比對部分，裡面資料必須要相同不然就會遇到判讀問題)
@@ -34,7 +34,7 @@ git diff .\text1.txt .\text2.txt
 ```bash 
 git diff text_1 text_2
 ```
-![](/image/20230426_22-04-07.png)
+
 
 ### 三、Commit 比較
 這會由git commit 進行比對，首先需要知道 commit 再進行比對即可。

@@ -7,14 +7,13 @@ categories = ['後端技術', 'C#', '筆記']
 tags = ['C#']
 keywords = []
 image = '/image/20240727_01-42-16.png'
-weight = 1
 +++
 
 近期要學習 C# reocrd，因此想要先了解一下 Class 與 Struct 的差異，以下是筆記。
 
 ## Class 與 Struct 差異
 在程式設計中，Class（類別）和 Struct（結構）是兩種用來定義資料型別的基本構造。了解兩者之間的差異有助於在不同的情境下選擇適當的資料型別。以下將從多個角度來探討它們的不同之處。
-![](/image/20240727_01-42-16.png)
+
 
 ### 1. 基本概念與核心差異
 - **類別 (Class)：**
@@ -62,7 +61,7 @@ struct sampleStruct
 	public int score { get; set; }
 }
 ```
-![](/image/20240727_01-16-05.png)
+
 
 
 #### 2-2 default 變化
@@ -88,7 +87,7 @@ struct sampleStruct
 }
 ```
 
-![](/image/20240727_01-18-09.png)
+
 
 
 #### 2-3 陣列變化
@@ -99,7 +98,7 @@ var s3 = new sampleStruct[5];
 s1.Dump("use initial");
 s3.Dump("use initial");
 ```
-![](/image/20240727_01-23-15.png)
+
 
 #### 2-4 變數 Equals 比較
 以下結果可以讓各位讀者知道什麼叫做參考型別和實值型別。
@@ -127,7 +126,7 @@ s3.Dump();
 s4.Dump();
 ```
 
-![](/image/20240727_01-35-08.png)
+
 
 ---
 

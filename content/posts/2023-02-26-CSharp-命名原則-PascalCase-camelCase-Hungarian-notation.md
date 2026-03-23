@@ -13,12 +13,12 @@ image = '/image/20230226_19-44-08.png'
 ## 一、小駝峰式命名法 (lower camel case)
 又稱「camel Case 」。把字首字母改為小寫其他改為大寫，例如 : ```dataTable```、```fileName```、```userDetail```。
 
-![](/image/20230226_19-44-08.png)
+
 
 ## 二、大駝峰式命名法 (upper camel case)
 又稱「Pascal Case 」。把每一個前面第一個字首字母改為大寫，例如 : ```DataTable```、```FileName```、```UserDetail```。
 
-![](/image/20230226_19-44-17.png)
+
 
 
 ## 三、匈牙利命名法（Hungarian notation）

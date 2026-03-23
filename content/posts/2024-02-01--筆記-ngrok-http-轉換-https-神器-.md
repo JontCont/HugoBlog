@@ -24,13 +24,13 @@ ngrok 是一個可以將內網伺服器與對外伺服器溝通的服務。ngrok
 進入ngrok網站後，會需要進行安裝的動作，點擊[ngrok.exe](https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip)即可。
 
 存放位置沒有特別限制，這邊我存放路徑為 ```C:\Windows\System32``` 給各位參考。
-![](/img/Note/ngrok/Snipaste_2022-08-11_21-01-27.png)
+
 
 接下來要加入 authtoken 這邊需要複製網站上提供的指令並貼在command 裡面。
 ```cmd
 ngrok config add-authtoken xxxxxxx
 ```
-![](/img/Note/ngrok/Snipaste_2022-08-11_21-24-50.png)
+
 
 完成後，可以輸入```ngrok help ```先看看指令。官方網所提供如果要開啟 port 80 必須要輸入```ngrok http 80```。
 

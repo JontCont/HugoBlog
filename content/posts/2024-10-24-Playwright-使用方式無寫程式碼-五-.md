@@ -74,7 +74,7 @@ test('驗證 github 內容', async ({ page }) => {
 ```
 
 這邊就是我們執行後的結果，可以看到他有幫我們登入後，完成了我們的測試動作。
-![](/image/20241024_22-55-52.png)
+
 
 <video width="320" height="240" controls>
   <source src="/video/20241024_225431.mp4" type="video/mp4">
