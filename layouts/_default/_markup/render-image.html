@@ -4,4 +4,4 @@
 {{- if and (not $isExternal) (not $isData) -}}
   {{- $src = (strings.TrimPrefix "/" $src) | relURL -}}
 {{- end -}}
-<img src="{{ $src | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+<img src="{{ $src | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} onerror="this.style.display='none'">

@@ -6,7 +6,6 @@ description = ''
 categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
-image = 'https://d.line-scdn.net/stf/linecorp/en/pr/quickreply_en.png'
 weight = 1
 +++
 之前有已經結束Line Bot 簡易製作、使用方式，這是會使用Nottify 使用方式。目前為止Bot 製作上，Notift 不論是創建、呼叫、API 測試相對的比Bot 友善許多，Notify 可以應用很多方式(Exmpale : 監控、提示訊息、警示資訊等)。若有使用常駐、監聽伺服方式可以不妨加入Notify 功能。

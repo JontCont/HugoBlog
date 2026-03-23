@@ -6,7 +6,7 @@ description = ''
 categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
-image = 'https://d.line-scdn.net/stf/linecorp/en/pr/quickreply_en.png'
+image = '/image/20260323.png'
 weight = 1
 +++
 
