@@ -7,7 +7,7 @@ description = ''
 categories = ['筆記', '技術']
 tags = ['ngrok']
 keywords = []
-image = 'https://miro.medium.com/max/554/1*sQhD5gYF74FvBF8aoWf8cw.png'
+image = ''
 +++
 ## 前言
 相信不少有製作專案時候，面臨不少有管https的問題 ，例如 Line Bot (message api)、影像識別等。必需要https 才能使用，ngrok會將成為專案救星。

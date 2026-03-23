@@ -350,7 +350,10 @@
 }
 
 @media (max-width: 480px) {
-  .header-inner { padding: 0 0.85rem; }
-  .header-search-bar { padding: 0.65rem 0.85rem; }
-  .mobile-nav-panel { padding: 0.65rem 0.85rem 0.9rem; }
+  .header-inner { padding: 0 0.65rem; }
+  .header-search-bar { padding: 0.55rem 0.65rem; }
+  .mobile-nav-panel { padding: 0.55rem 0.65rem 0.85rem; }
+  .brand__mark { height: 1.8rem; width: 1.8rem; font-size: 0.95rem; border-radius: 7px; }
+  .brand__name { font-size: 0.92rem; }
+  .search-toggle, .mobile-nav-toggle { height: 1.9rem; width: 1.9rem; }
 }

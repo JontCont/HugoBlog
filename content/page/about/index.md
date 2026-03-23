@@ -3,11 +3,6 @@ title: 關於
 slug: about
 url: /about/
 date: 2016-01-31T22:10:28+08:00
-menu:
-  main:
-    weight: -70
-    params:
-      icon: user
 comments: false
 ---
 
