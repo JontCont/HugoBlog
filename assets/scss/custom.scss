@@ -1,0 +1,77 @@
+/* ── View Toggle Button ────────────────────────────── */
+.view-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: var(--section-separation);
+    justify-content: flex-end;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border: 1.5px solid var(--card-separator-color);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--card-text-color-tertiary);
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        &.active {
+            color: var(--accent-color-text);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        span {
+            @media (max-width: 500px) {
+                display: none;
+            }
+        }
+    }
+}
+
+/* ── Grid Mode ────────────────────────────────────── */
+.article-list--grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--section-separation);
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        .article-image img {
+            height: 180px;
+        }
+
+        .article-details {
+            padding: 16px;
+        }
+
+        .article-title {
+            font-size: 1.7rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
