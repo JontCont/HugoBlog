@@ -51,6 +51,27 @@ hugo
 
 產出檔案位於 `public/` 目錄。
 
+### 主題載回（hugo-theme-stack 子模組）
+
+當 `themes/hugo-theme-stack/` 內容遺失或是空資料夾時，可在專案根目錄執行：
+
+```bash
+git submodule sync --recursive
+git submodule update --init --recursive
+```
+
+若是第一次下載專案，建議直接使用：
+
+```bash
+git clone --recurse-submodules <repo-url>
+```
+
+可用以下指令驗證主題已正確載入：
+
+```bash
+hugo
+```
+
 ## 專案結構
 
 ```
