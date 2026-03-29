@@ -25,12 +25,12 @@ Playwright Inspector 是一個 GUI 工具，專門用來幫助開發人員調試
 3. 選擇target: 可以直接選擇頁面上的target，有不同語言產生內容。
 4. 查看行為日誌: 顯示每個操作的行為日誌，幫助分析和辨識問題。
 
-
+![Inspector 介面](/image/20240725_22-30-34.png)
 
 #### 1-1 Inspector 開啟方式
 
 開啟方式有兩種，一種是透過 CLI 開啟，另一種是透過 VS Code 開啟。
-
+![](/image/20240725_23-34-56.png)
 
 ---
 ### 二、 Inspector 介面/使用方式
@@ -40,12 +40,12 @@ Playwright Inspector 是一個 GUI 工具，專門用來幫助開發人員調試
 #### 2-1 Target 選擇
 
 以下為 Inspector Target 選擇語言功能，可以選擇這幾些語言產生內容。
-
+![](/image/20240725_23-29-25.png)
 
 #### 2-2 Debug Tools
 
 Inspector 有提供 Debug Tools 功能，可以查看 Log。
-
+![](/image/20240725_23-31-37.png)
 
 ---
 
@@ -53,4 +53,3 @@ Inspector 有提供 Debug Tools 功能，可以查看 Log。
 1. 開啟 Inspector 介面 : ```npx playwright test "test-1.spec.ts"  --debug```
 2. 指定 test function : ```npx playwright test "test-1.spec.ts" -g "sample$" --debug```
 3. 不開啟報告 : ```npx playwright test "test-1.spec.ts" -g "sample$" --debug --reporter=null```
-

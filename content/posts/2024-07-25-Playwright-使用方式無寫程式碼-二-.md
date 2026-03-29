@@ -32,7 +32,7 @@ image = '/image/20240720_23-44-39.png'
 3. 輸出視窗 : 下方就是比較詳細的內容，有 locator 、Call 、Log 、Error 、Console 等都在上面。
 4. 檢視視窗 : 這邊畫面就是透過上面 Snapshots 來看到每一個步驟的畫面，圖中就是 Playwright 比對的字體。
 
-
+![](/image/20240725_21-59-27.png)
 
 ##### 1-2-1 Trace viewer 設定方式
 
@@ -54,7 +54,7 @@ export default defineConfig ({
 ### 二、工具(Tools) 功能
 
 Plawright 提供了一些工具功能，這邊來說一下這些功能。
-
+![](/image/20240725_22-12-38.png)
 
 #### 2-1 Pick Locator
 這功能為點擊我們網頁上任何的 area ，之所以稱 locator (定位器) 是因為這個功能可以幫助我們找到該元素的位置。
@@ -79,7 +79,7 @@ Plawright 提供了一些工具功能，這邊來說一下這些功能。
 
 ### 三、Playwright 錄製工具
 通常在錄製時候，其實都可以看到下方圖片的功能，這邊來說一下這些功能。
-
+![](/image/20240725_22-20-16.png)
 
 
 #### 3-1 暫停/繼續
