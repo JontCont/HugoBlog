@@ -21,7 +21,7 @@ LinqPad 裡面會一個 My Extensions 的檔案，他可以讓我們自己定義
 - static class MyExtensions : 從 Code 裡面可以看到有三段地方，原則上會使用 MyExtensions 這個類別，通常是要使用小工具之類加入在這裏面，，這樣就可以在撰寫程式碼時直接使用這些方法。
 - region Advanced : 這裡面是一些進階的方法，這裡面的方法通常是一些比較複雜的方法，這樣就可以在撰寫程式碼時直接使用這些方法。裡面如果要針對各Framework 有不同的方法，可以使用官方已經自動的 #if 來區分。
 
-
+![](/image/20240526_15-58-05.png)
 
 
 使用方式效果如下
@@ -82,9 +82,9 @@ void StartWebBrowser(string uri)
 接下來，選取全部程式碼後按下右鍵```Create Code Snippet```，Code 的區塊會帶入 Queries 選取後的程式碼，這樣就可以在撰寫程式碼時直接使用這個片段，而不用每次都重新撰寫一次。
 上面的選項如果有任何改變 refence、namespace、using 之類會自動包含在裡面，如果要再使用這個片段就可以不用去using。
 
-
-
-
+![](/image/20240526_16-15-40.png)
+![](/image/20240526_16-17-55.png)
+![](/image/20240526_16-23-01.png)
 
 
 #### 2-2 Snippet 快捷鍵

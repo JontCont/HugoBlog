@@ -46,32 +46,32 @@ dotnet tool install -g --ignore-failed-sources upgrade-assistant
 
 # 使用 ASP NET MVC5
 ## 創建專案
-
-
+![](/image/20230303_13-04-28.png)
+![](/image/20230303_13-04-34.png)
 
 ## 執行 .NET 升級小幫手
-
-
+![](/image/20230303_13-05-41.png)
+![](/image/20230303_13-06-41.png)
 
 指令內容請參考 【[使用 .NET 升級小幫手將 ASP.NET MVC 應用程式升級至 .NET 6](https://learn.microsoft.com/zh-tw/dotnet/core/porting/upgrade-assistant-aspnetmvc)】。
 
 若直接按下 Enter 自動帶入第一個選項。
-
-
-
+![](/image/20230303_13-06-59.png)
+![](/image/20230303_13-07-21.png)
+![](/image/20230303_13-10-00.png)
 
 
 ## 執行 dotnet core
 ### 前置作業
 1. 前面需要先刪除 ```App_Start``` 、```Global.asax``` 、```Global.asax.cs```  
- 
+![](/image/20230303_13-11-48.png) 
 2. 創建 wwwroow 資料夾，將 css、js、image等放進 wwwroot 資料夾裡面
-
+![](/image/20230303_13-23-54.png)
 3. 使用 .csproj 或是 .sln 進入專案
 
 ### 建置
 建置時候會發生錯誤，因為Net Core 是不支援 BundleConfig.cs ，所以把全部改為 ```<script>```、```<link>``` 這邊動作就會比較麻煩。
-
+![](/image/20230303_13-27-05.png)
 
 ```html
     @Scripts.Render("~/bundles/jquery")
@@ -83,7 +83,7 @@ dotnet tool install -g --ignore-failed-sources upgrade-assistant
 ```
 
 ### 完成
-
+![](/image/20230303_13-49-27.png)
 
 ---
 ## 結論

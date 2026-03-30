@@ -46,8 +46,8 @@ on:
 
 #### 2-1-1 手動觸發
 手動觸發方式參考如下
-
-
+![](/image/20231217_22-20-27.png)
+![](/image/20231217_22-19-57.png)
 
 ### 2-2 環境
 github 有幾些要細節每個執行的系統環境不一定是一樣的ram、cpu、硬碟空間等等，可以參考 [Virtual environments for GitHub-hosted runners](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners)。這裡我使用的是 ubuntu-latest，因為我使用的是 .NET CORE 可以用 linux 減少建置、執行時間。
@@ -59,7 +59,7 @@ jobs:
     
 ```
 
-
+![](/image/20231217_22-27-06.png)
 
 ### 2-3 執行動作
 執行動作如下。這邊只需要安裝Nuget、net版本、建置、執行，就可以完成執行動作。那留意是排程動作如過太過頻繁會被github停用，所以這邊我設定每天執行一次。

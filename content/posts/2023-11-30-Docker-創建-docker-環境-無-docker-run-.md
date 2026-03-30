@@ -21,7 +21,7 @@ docker rmi [ContainerID]
 docker rmi [names] 
 ```
 
-
+![](/image/20221128_22-19-14.png)
 
 
 # 初次使用 Docker 動作 
@@ -38,7 +38,7 @@ docker rmi [names]
 docker pull hello-world
 ```
 
-
+![](/image/20221128_22-27-04.png)
 
 
 ## 創建 Container(docker create)

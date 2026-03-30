@@ -57,7 +57,7 @@ var config = Config.GetConfiguration<Startup>(); //加入設定檔
 ## (正篇) 使用Line Login 
 進入官方網站後，請創建一個 "Line Login" 頁面，介於設定內容沒有特別要注意，這邊就沒有把創建畫面貼上來。
 - [Line Developer](https://developers.line.biz/console/)
-
+![](/image/20230406_09-48-38.png)
 
 
 ### 需要保存項目
@@ -65,13 +65,13 @@ var config = Config.GetConfiguration<Startup>(); //加入設定檔
 1. Channel secret 
 2. Your user ID 
 3. Channel ID 
-
-
+![](/image/20230406_09-50-56.png)
+![](/image/20230406_09-51-19.png)
 
 
 ### LINE Login settings
 進入 【Line Login Setting】頁籤後，Callback URL 是支援 Localhost URL ，測試前可以將URL填上去務必在更新至正式版本需要改回來。
-
+![](/image/20230406_09-55-45.png)
 
 ---
 
@@ -121,4 +121,5 @@ builder.Services.AddSingleton<LineLogin>(lineLogin);
 ```
 
 以上即可完成登入動作，畫面入下圖。後續可以直接在 ReceivedAuthorize() 進行修改即可或是相要知道 [Callback Function 回呼函式](../../../%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93/JS/js-callback.md)資訊可以點進來看。
-
+![](/image/20230406_10-01-48.png)
+![](/image/20230406_10-02-20.png)

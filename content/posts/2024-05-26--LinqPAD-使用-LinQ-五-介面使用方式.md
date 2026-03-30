@@ -20,20 +20,20 @@ image = '/image/20240511_11-16-15.png'
 
 ### 1-1 介面 
 LinqPad 左邊兩個區塊第一個是連線資料庫、第二個是查詢(Queries)，右邊則是查詢結果。
-
+![](/image/20240511_11-16-15.png)
 
 - 連線資料庫: 
 1. 功能是利用 Entity Framework 自動創建 models
 2. 可以使用 dll 檔案連線資料庫
 3. models 內容不能改變，所以請使用自動產出來的 models 進行操作
-
+![](/image/20240526_12-14-17.png)
 
 
 - 查詢(Queries):
 1. 可以使用 C#、VB.NET、F# 進行查詢
 2. 可以使用 NuGet 安裝套件
 3. 可以使用自訂的 NuGet 套件 、Snippet 、Namesapace Imports
-
+![](/image/20240526_12-18-15.png)
 
 
 ### 1-2 萬能的 Dump()
@@ -43,7 +43,7 @@ LinqPad 左邊兩個區塊第一個是連線資料庫、第二個是查詢(Queri
 var list = new List<string> { "A", "B", "C" };
 list.Dump();
 ```
-
+![](/image/20240526_12-19-29.png)
 
 
 ### 1-3 快捷鍵
@@ -72,7 +72,7 @@ list.Dump();
 
 ### 1-4 使用官方範本
 linqPad 很貼心的提供了很多範本，可以讓我們快速的使用，範本分為兩種，一種是 C# 的範本，另一種是 SQL 的範本，可以讓我們快速的使用。
-
+![](/image/20240526_12-53-25.png)
 
 
 ## 參考文件

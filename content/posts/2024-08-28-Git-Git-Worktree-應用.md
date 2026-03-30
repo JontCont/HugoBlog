@@ -36,7 +36,7 @@ git branch -a ## 查看所有 branch
 git checkout -b <branch name>  ## 切換 branch
 git worktree list ## 查看目前 worktree
 ```
-
+![](/image/20240828_21-59-34.png)
 
 
 
@@ -52,10 +52,10 @@ git worktree lock <path> ## 鎖定 worktree
 git worktree unlock <path> ## 解鎖 worktree
 ```
 
-
+![](/image/20240828_22-11-26.png)
 
 如果被移動或刪除會出現以下錯誤訊息。
-
+![](/image/20240828_22-21-55.png)
 
 
 #### 1-5 不小心刪掉解決方式(標記 prune)
@@ -75,11 +75,11 @@ git worktree prune ## 2. 這會移除所有已標記為可修剪的 worktree
 當創建一個 worktree 時，會在 .git 資料夾下產生 worktrees 資料夾，這個資料夾會記錄所有 worktree 的資訊。包含創建資料夾的名稱、branch、lock 狀態等等。
 
 下方是直接把 worktree 專案名稱放在 .git 資料夾下的 worktrees 資料夾，主要存在這相對路徑。 
-
-
+![](/image/20240828_22-33-36.png)
+![](/image/20240828_22-34-49.png)
 
 在細微一點的地方，可以看到 worktree 都會列出 sha1 的資訊，其實他也會記錄在 .git/worktrees 資料夾下。
-
+![](/image/20240828_22-38-48.png)
 
 如果要知道 git 全部結構再請各位參考 [30 天精通 Git 版本控管 (06)：解析 Git 資料結構 - 物件結構](https://ithelp.ithome.com.tw/articles/10134089) 這篇文章。
 

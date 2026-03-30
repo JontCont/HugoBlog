@@ -20,7 +20,7 @@ image = '/img/Web/react/react_bg.png'
 
 ## 創建 component
 加入 template-page
-
+![](/image/20230507_19-50-27.png)
 
 下方可以使用範本來快速建檔，如下 : 
 ```tsx
@@ -55,7 +55,7 @@ export default About;
 ```
 ## 創建 AppRouter.tsx
 加入 AppRouter 當作本次的 router並加入以下內容，即可完成顯示功能。介於 router v6 已經不再支援 Switch 務必注意網站上那個 關鍵字。
-
+![](/image/20230507_19-49-02.png)
 ```tsx
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';

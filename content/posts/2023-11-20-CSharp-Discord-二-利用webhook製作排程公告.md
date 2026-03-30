@@ -79,9 +79,9 @@ foreach (var html in htmls)
 ### 2. 製作 Discord Webhook
 #### 2-1創建 Webhook 機器人
 這裡操作比上一篇簡單，只需要到 Discord > 設定 > 整合 > Webhook > 新增 Webhook > 複製 Webhook URL > 儲存 。以上動作即可
-
-
-
+![](/image/20231119_16-57-19.png)
+![](/image/20231119_17-00-07.png)
+![](/image/20231119_17-00-40.png)
 
 #### 2-2 撰寫 webhook 機器人
 這裡我們使用 WebClient 來發送訊息，這邊要注意的是，Discord Webhook 需要使用 POST 的方式來發送訊息，並且需要設定 Content-Type 為 application/json，這樣才能正確的發送訊息。
@@ -211,20 +211,20 @@ static void SendMessage(messages json, string webhook)
 ```
 
 ### 4. 效果/結果
-
+![](/image/20231119_17-12-30.png)
 
 ### 4.1 azure webjob
 這邊需要創建 azure 雲端平台就可以使用 web app，而這裡 webjob是可以免費使用的，只要設定排程就可以執行，這邊我們就可以使用排程公告的功能。 (檔案上傳名稱務必使用英文否則上船會失敗)。
-
-
+![](/image/20231119_17-20-29.png)
+![](/image/20231119_17-18-36.png)
 
 ### 4.2 題外功能
 基於這個功能我特別加入 IThome 通知功能，如何看到此功能可以點下方連結，若需要訂閱請務必按照圖片動作。
 - [Discoard - IThome 公告通知](https://discord.gg/BssY3EyAap)
 
 ### 4-3 訂閱/追蹤頻道
-
-
+![](/image/20231119_17-24-51.png)
+![](/image/20231119_17-25-08.png)
 
 
 ## 文件參考

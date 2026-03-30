@@ -16,14 +16,14 @@ Dapr 是一個開源的分散式應用程式運行時，它提供了一個簡單
 - 使用 winget 安裝:  ```winget install Dapr.CLI```
 
 安裝完成後，從新開啟一個終端機，輸入```dapr -h```，如果有顯示以下畫面代表安裝成功。
-
+![](/image/20240929_10-34-11.png)
 
 
 ### 二、dapr 初始化動作
 - 使用```dapr init```初始化一個新的專案 (若要確認版本號，可以使用```dapr --version``` 或 ```dapr -v```)
 - 初始化後，會在 ```%USERPROFILE%/.dapr``` 下產生一個 ```config.yaml``` 檔案，這個檔案是dapr的設定檔，可以在這邊設定dapr的一些參數。
 - 而外初始化會有 docker 容器啟動，可以使用```docker ps```查看啟動的容器。
-
+![](/image/20240929_10-54-40.png)
 
 
 ### 三、建立一個新的專案
@@ -46,7 +46,7 @@ GET {{nonUseDapr}}/weatherforecast/
 Accept: application/json
 ```
 
-
+![](/image/20240929_11-14-24.png)
 
 這樣代表API已經成功建立，但是這動作並非是 dapr 功能所以我們來調整 dapr 提供的網址。
 

@@ -14,7 +14,7 @@ image = '/img/Web/bg/Angular-bg-01.png'
 Angular 元件生命週期中從 建立、渲染、更新、銷毀過程中，會觸發一些事件，這些事件可以讓我們在元件生命週期中做一些事情，例如：在元件建立時，可以做一些初始化的動作，或是在元件銷毀時，可以做一些清除的動作。
 
 參考下圖生命週期以及程式範例。
-
+![](/image/20230827_20-01-12.png)
 
 - [Will保哥-範例程式](https://stackblitz.com/edit/angular-lifecycle-hooks) 
 

@@ -16,7 +16,7 @@ Error: Failed to deploy web package to App Service.
 Error: Deployment Failed with Error: Error: Failed to deploy web package to App Service.
 ```
 
-
+![](/image/20230401_23-13-00.png)
 
 ## 原因
 Cache 已經使用超出 10GB 無法再使用，而且不能清除Cache 容量相當麻煩。

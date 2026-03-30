@@ -23,7 +23,7 @@ git remote 常見指令如下 :
 
 ### 一、取得 repository url
 首先，可以先把 repository 創建完畢並且取得 url 即可。
-
+![](/image/20230604_13-19-22.png)
 
 
 ### 二、加入 remote 

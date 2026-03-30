@@ -13,7 +13,7 @@ image = '/image/20221219_21-45-27.png'
 - Entity Framework 6 : 透過資料庫提供者外掛程式模型搭配使用 SQL Server/Azure SQL Database、SQLite、Azure Cosmos DB、MySQL、PostgreSQL 及更多資料庫。
 
 因此，使用EF6表現上會與 EF core 功能會也所不同。EF6是基於ADO.NET發展出來的物件關聯對應 (O/R Mapping)，利用了抽象化資料結構的方式，將每個資料庫物件都轉換成應用程式物件 (entity)，而資料欄位都轉換為屬性 (property)，關聯則轉換為結合屬性 (association)，讓資料庫的 E/R 模型完全的轉成物件模型。
-
+![](/image/20221220_09-11-30.png)
 
 
 參考文件 
@@ -34,18 +34,18 @@ image = '/image/20221219_21-45-27.png'
 4. 選擇版本 (建議選擇6.x穩定版本)
 5. 選擇指定結構
 
-
-
-
-
-
+![](/image/20221219_21-32-03.png)
+![](/image/20221219_21-32-27.png)
+![](/image/20221219_21-32-58.png)
+![](/image/20221219_21-33-18.png)
+![](/image/20221219_21-33-49.png)
 
 ### 起手前介紹
 如果是初次使用EF的讀者，看看以下說明。
 EF 創建後會產生 "DbContext"  可以從 xxx.context.cs 查看、修改、複寫。基於ADO.Net來說 EF 很貼心把 Connection Open()/Close() 寫好，使用上會比較友善許多、簡單。
 
-
-
+![](/image/20221219_22-46-00.png)
+![](/image/20221219_21-59-01.png)
 
 xxx.edmx 下一篇會介紹如何此用，原則上他是資料庫、實體資料模型比較的參考文件後面再細談。
 

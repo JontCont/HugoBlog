@@ -54,7 +54,7 @@ var config = Config.GetConfiguration<Startup>(); //加入設定檔
 
 ## (正篇) 使用Line Notify
 - [Line Notify](https://notify-bot.line.me/zh_TW/) 
-
+![](/image/20230406_10-14-15.png)
 
 1. 設定參數
 ```cs

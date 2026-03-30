@@ -28,7 +28,7 @@ image = '/image/20230310_08-44-55.png'
 
 ## 應用程式設定
 位於 【Web 應用程式】> 【組態】專案進行設定即可，使用方式需要用 Json 命名如下圖。
-
+![](/image/20230405_12-49-29.png)
 
 
 如何在 C# 舉得到 Azure 參數，其實是透過 ```AddEnvironmentVariables()```這個來取得，預設它會自動帶入 ```EnvironmentVariables``` 所以無需要特別針對 ```AddAzureAppConfiguration```進行設定。

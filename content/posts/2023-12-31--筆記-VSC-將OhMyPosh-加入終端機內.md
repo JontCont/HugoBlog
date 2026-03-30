@@ -24,4 +24,4 @@ image = '/image/20231223_18-48-56.png'
 2. [Github Issue](https://github.com/ryanoasis/nerd-fonts/issues/785)
 
 若按裝好字體後與下圖一樣動作即可，就可以解決亂碼問題了。
-
+![](/image/20231231_18-46-41.png)

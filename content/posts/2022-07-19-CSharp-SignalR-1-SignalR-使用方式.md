@@ -64,6 +64,7 @@ namespace SignalR.Hubs{
     }//class : ChartHub    
 }// namespace : SignalRChat
 ```
+![](/image/Snipaste_2022-07-19_21-28-02.png)
 
 
 ## 註冊SignalR服務
@@ -84,6 +85,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapHub<SampleHub>("/chathub"); //加入這行 代表連接SignalR的路由與配對的Hub
 });
 ```
+![](/image/Snipaste_2022-07-19_21-34-47.png)
 
 
 

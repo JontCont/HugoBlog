@@ -23,7 +23,7 @@ width = border + padding + 內容的  width，
 height = border + padding + 內容的 height。 
 當你設定一個元素樣式為 box-sizing: border-box;，這個元素的內距和邊框將不會增加元素本身的寬度。
 
-
+![](/image/20230901_23-27-59.png)
 
 
 這樣可以確保所有元素的寬度都可以用比較直觀的方式來定義。
