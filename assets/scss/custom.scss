@@ -87,14 +87,17 @@
     }
 
     article {
-        // Fix: give no-image cards the same cover area as image cards
-        &:not(.has-image)::before {
-            content: '';
-            display: block;
+        .article-image--placeholder {
             height: 180px;
             background: linear-gradient(135deg, var(--accent-color) 0%, hsl(258, 80%, 72%) 100%);
             border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
             flex-shrink: 0;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .article-image img {
