@@ -1,9 +1,6 @@
 {
-  "MarkdownPaste.path": "${workspaceFolder}/content/image",
-  "MarkdownPaste.nameBase": "${datetime|yyyyMMdd_HHmmss}",
-  "MarkdownPaste.namePrefix": "",
-  "MarkdownPaste.nameSuffix": "",
-  "MarkdownPaste.silence": true,
-  "MarkdownPaste.enableImgTag": false,
-  "MarkdownPaste.encodePath": "none"
-}
+   "MarkdownPaste.path": "/${fileDirname}/image",
+   "MarkdownPaste.nameBase": "${datetime|yyyyMMdd_HHmmss}",
+   "MarkdownPaste.silence": true,
+   "MarkdownPaste.enableImgTag": false
+ }
