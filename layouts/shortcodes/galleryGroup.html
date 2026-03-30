@@ -1,0 +1,9 @@
+<a href="{{ .Get "link" }}" class="gallery-group">
+  <div class="gallery-group__cover">
+    <img src="{{ .Get "img" }}" alt="{{ .Get "name" }}" loading="lazy" onerror="this.style.display='none'">
+  </div>
+  <div class="gallery-group__info">
+    <h3>{{ .Get "name" }}</h3>
+    <p>{{ .Get "desc" }}</p>
+  </div>
+</a>
