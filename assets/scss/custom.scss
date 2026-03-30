@@ -43,6 +43,39 @@
     }
 }
 
+/* ── List Mode (default, no image) ───────────────── */
+.article-list:not(.article-list--grid) {
+    article {
+        // Hide cover image in list view
+        .article-image {
+            display: none;
+        }
+
+        // Compact horizontal layout: show content neatly
+        &.has-image .article-header {
+            flex-direction: column;
+        }
+
+        .article-details {
+            padding: 20px 24px;
+        }
+
+        .article-title {
+            font-size: 1.8rem;
+        }
+
+        // Show subtitle/description in list view
+        .article-subtitle {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 1.4rem;
+            margin-top: 6px;
+        }
+    }
+}
+
 /* ── Grid Mode ────────────────────────────────────── */
 .article-list--grid {
     display: grid !important;
