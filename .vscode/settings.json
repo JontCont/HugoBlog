@@ -1,6 +1,6 @@
 {
-   "MarkdownPaste.path": "/${fileDirname}/image",
-   "MarkdownPaste.nameBase": "${datetime|yyyyMMdd_HHmmss}",
+   "MarkdownPaste.path": "${fileDirname}/image",
+   "MarkdownPaste.nameBase": "${datetime|YYYY-MM-DD_HH-mm-ss}",
    "MarkdownPaste.silence": true,
    "MarkdownPaste.enableImgTag": false
  }
