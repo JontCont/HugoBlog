@@ -11,18 +11,16 @@
       {{ range $paginator.Pages }}
         {{ $post := . }}
         <article class="entry-card">
-          {{ with .Params.image }}
-            {{ $img := . }}
-            {{ if strings.HasPrefix $img "http" }}
-              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+          <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap{{ if not .Params.image }} entry-card__cover-wrap--empty{{ end }}" aria-label="{{ $post.Title }}">
+            {{ with .Params.image }}
+              {{ $img := . }}
+              {{ if strings.HasPrefix $img "http" }}
                 <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}">
-              </a>
-            {{ else }}
-              <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
+              {{ else }}
                 <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}">
-              </a>
+              {{ end }}
             {{ end }}
-          {{ end }}
+          </a>
           <div class="entry-card__body">
             <div class="entry-card__meta">
               {{ with .GetTerms "categories" }}

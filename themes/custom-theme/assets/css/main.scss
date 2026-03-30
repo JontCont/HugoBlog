@@ -832,7 +832,10 @@ main,header,footer { display: block; }
   transform: translateY(-5px) scale(1.012);
 }
 .blog-main--grid .entry-card__cover-wrap {
-  bottom: 0; left: 0; position: absolute; right: 0; top: 0;
+  bottom: 0; height: 100%; left: 0; position: absolute; right: 0; top: 0;
+}
+.blog-main--grid .entry-card__cover-wrap--empty {
+  background: linear-gradient(135deg,var(--primary) 0%,#818cf8 100%);
 }
 .blog-main--grid .entry-card__cover {
   aspect-ratio: unset; height: 100%; object-fit: cover; width: 100%;
@@ -862,10 +865,10 @@ main,header,footer { display: block; }
 }
 .blog-main--grid .entry-card h2 a { color: #fff; }
 .blog-main--grid .entry-card p,.blog-main--grid .entry-card__footer { display: none; }
-.blog-main--grid .entry-card:not(:has(.entry-card__cover)) {
-  background: linear-gradient(135deg,var(--primary) 0%,#818cf8 100%);
+.blog-main--grid .entry-card__cover-wrap--empty::after {
+  background: linear-gradient(to bottom,rgba(6,12,26,0.14) 0%,rgba(6,12,26,0.56) 44%,rgba(6,12,26,0.9) 100%);
 }
-.blog-main--grid .entry-card:not(:has(.entry-card__cover)) h2 { color: #fff; }
+.blog-main--grid .entry-card__cover-wrap--empty + .entry-card__body h2 { color: #fff; }
 
 /* =============================================================
    ENTRY CARD (list view)
@@ -883,10 +886,17 @@ main,header,footer { display: block; }
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
-.entry-card__cover-wrap { display: block; overflow: hidden; }
+.entry-card__cover-wrap {
+  background: linear-gradient(135deg,rgba(79,70,229,0.14) 0%,rgba(129,140,248,0.18) 100%);
+  display: block;
+  height: 180px;
+  overflow: hidden;
+}
+/* empty cover-wrap shows the gradient background, no override needed */
 .entry-card__cover-wrap:hover .entry-card__cover { transform: scale(1.03); }
 .entry-card__cover {
   aspect-ratio: 16/8;
+  height: 100%;
   border-radius: 0;
   display: block;
   object-fit: cover;
