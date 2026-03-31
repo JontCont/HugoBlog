@@ -6,7 +6,7 @@ description = '記錄在 Synology NAS 部署 n8n 前，先把自己的 Domain、
 categories = ['DevOps', 'Synology']
 tags = ['Synology', 'n8n', 'Domain', 'DNS', 'Cloudflare']
 keywords = ['Synology n8n', 'n8nio', 'Domain', 'DNS', 'Cloudflare Tunnel']
-image = '/image/20260323.png'
+image = 'image/202603Mo_143410.png'
 +++
 
 ## 前言
@@ -33,9 +33,9 @@ DNSHe 是一個提供免費 Domain 註冊的服務平台，使用者可以在這
 
 按照以下圖檔創建一個新的 Domain。如果計畫使用 Cloudflare Tunnel，建議在此步驟直接設定好主網域，例如 `yourdomain.com`。這樣後續在 Cloudflare Tunnel 中便可創建子網域，如 `tunnel.yourdomain.com`、`api.yourdomain.com` 等，方便後續應用的部署與管理。
 
-![](/image/202603Mo_143410.png)
-![](/image/202603Mo_143851.png)
-![](/image/2026-03-30_22-21-55.png)
+![](image/202603Mo_143410.png)
+![](image/202603Mo_143851.png)
+![](image/2026-03-30_22-21-55.png)
 
 
 ### 二、[Cloudflare](https://dash.cloudflare.com/)
@@ -43,12 +43,12 @@ DNSHe 是一個提供免費 Domain 註冊的服務平台，使用者可以在這
 #### 2-1 取得 Domain 並設定 DNShe 的 DNS 代管
 
 接著我們需要把剛剛在 DNSHe 註冊的 Domain 交給 Cloudflare 來管理。首先，我們需要在 Cloudflare 上創建一個帳戶，然後添加我們的 Domain。 
-![](/image/202603Mo_223544.png)
+![](image/202603Mo_223544.png)
 
 從 Cloudflare 後臺取得 NS 伺服器的資訊，然後回到 DNSHe 的後台，把 DNS 伺服器的資訊更新為 Cloudflare 提供的 NS 伺服器。這樣 Cloudflare 就能夠管理我們的 Domain 的 DNS 設定了。
 
-![](/image/202603Mo_223848.png)
-![](/image/202603Mo_224254.png)
+![](image/202603Mo_223848.png)
+![](image/202603Mo_224254.png)
 
 #### 2-2 驗證 DNS 設定是否生效
 
@@ -75,7 +75,7 @@ DNSHe 是一個提供免費 Domain 註冊的服務平台，使用者可以在這
 
 接下來就是設定 Cloudflare Tunnel 的步驟。注意新版介面中，Tunnel 功能位於 **Networking > Tunnels**，而不是在 **Domains** 的選項中。
 
-![](/image/202603Mo_224613.png)
+![](image/202603Mo_224613.png)
 
 #### 2-5 建立 Cloudflare Tunnel
 
@@ -106,7 +106,7 @@ DNSHe 是一個提供免費 Domain 註冊的服務平台，使用者可以在這
 - 確保 Tunnel Token 正確設定在環境變數中
 - Tunnel 會自動將外部請求轉發到內部服務
 
-![](/image/202603Mo_225138.png)
+![](image/202603Mo_225138.png)
 
 ---
 
