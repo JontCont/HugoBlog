@@ -30,29 +30,23 @@ image = ''
 
 匯入後，Skill 會放入 `.kiro/skills/` 目錄。
 
----
-
-## 二、設定 Resources 路徑（重要 ⚠️）
-
-匯入 Skill 之後，Agent 的 `resources` 欄位**仍需手動加入對應路徑**，否則 Agent 不會讀取到 Skills。
-
-編輯 `.kiro/settings.json`，加入 `resources` 設定：
-
-```json
-{
-  "resources": [
-    {
-      "path": ".agents/skills"
-    }
-  ]
-}
-```
-
-> 💡 如果你的 Skills 放在其他路徑，例如 `.kiro/skills/`，記得調整 `path` 對應的值。
+> ⚠️ 如果匯入時沒有自動加入 `resources` 路徑，需要手動編輯 `.kiro/settings.json`：
+>
+> ```json
+> {
+>   "resources": [
+>     {
+>       "path": ".agents/skills"
+>     }
+>   ]
+> }
+> ```
+>
+> 路徑依實際存放位置調整，例如 `.kiro/skills/`。
 
 ---
 
-## 三、驗證設定
+## 二、驗證設定
 
 設定完成後，重新啟動 Kiro 或重新載入 Agent，確認 Skills 已正確載入。
 
