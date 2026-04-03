@@ -121,13 +121,13 @@ async function SignPage(page: Page) {
 }
 ```
 
-### 二、UI 模式 vs Moderate 模式
+### 二、UI 模式 vs Worker-scoped Fixture 模式
 
 基本上這範例是稱作為 [UI 模式] 因此會需要有UI操作登入使用者，才能夠登入。以下為官方網站的說明。
 
 > UI mode 將不會預設執行 setup 專案以提高測試速度。我們建議在現有身份驗證過期時，偶爾手動執行 auth.setup.ts 來進行身份驗證。
 
-如何實現 modelrate 模式，可以參考官方以下範例。
+如何實現 Worker-scoped Fixture 模式（每個 Worker 獨立驗證），可以參考官方以下範例。
 
 ```ts
 import { test as baseTest, expect } from '@playwright/test';
