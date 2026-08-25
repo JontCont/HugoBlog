@@ -12,9 +12,9 @@ image = '/image/rules_bridge_cover.png'
 ## 前言
 
 在系列前三篇文章中，我們完成了客製化 Skill 的開發、多代理人協作與 `/learn` 自我進化體系：
-- [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/)
-- [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/2026/08/25/agent-skills-multi-agent-subagent-collaboration/)
-- [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/2026/08/25/agent-skills-self-evolution-learn/)
+- [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/)
+- [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/posts/agent-skills-multi-agent-subagent-collaboration/)
+- [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/posts/agent-skills-self-evolution-learn/)
 
 然而，即便是最聰明的 AI 模型，偶爾還是會發生「漏跑格式化」、「執行了高危險指令」或「測試還沒跑完就搶先回報完成」的人性化疏失。
 
@@ -203,7 +203,7 @@ echo '{"decision": "allow"}'
 ---
 
 > 🔗 **系列文章導覽**：
-> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/)
-> - [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/2026/08/25/agent-skills-multi-agent-subagent-collaboration/)
-> - [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/2026/08/25/agent-skills-self-evolution-learn/)
+> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/)
+> - [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/posts/agent-skills-multi-agent-subagent-collaboration/)
+> - [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/posts/agent-skills-self-evolution-learn/)
 > - **【AI工具】Agent Skills (四) - 生命週期攔截：Lifecycle Hooks 全自動防呆與守護機制**（本篇）

@@ -13,7 +13,7 @@ image = ''
 
 上一篇整理了 Skills 和 Plugin 的安裝方式，這篇接著用 **Playwright Skills** 做實際範例，展示 Agent 如何透過 MCP 操作瀏覽器、自動產生測試程式碼 🎯
 
-> 前篇：[Skills / Plugin 安裝方式筆記](/2026/04/03/Copilot-CLI-Skills-Plugin-安裝方式筆記/)
+> 前篇：[Skills / Plugin 安裝方式筆記](/posts/Copilot-CLI-Skills-Plugin-安裝方式筆記/)
 
 ---
 

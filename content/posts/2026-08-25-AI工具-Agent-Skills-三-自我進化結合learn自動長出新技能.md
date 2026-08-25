@@ -12,8 +12,8 @@ image = '/image/rules_bridge_cover.png'
 ## 前言
 
 在系列前兩篇文章中，我們學會了如何手動撰寫 Skill 以及如何透過多代理人（Subagents）進行任務分工：
-- [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/)
-- [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/2026/08/25/agent-skills-multi-agent-subagent-collaboration/)
+- [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/)
+- [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/posts/agent-skills-multi-agent-subagent-collaboration/)
 
 然而，在實際專案開發中，我們最常遇到的無奈情況往往是：**「今天花了大把時間糾正 AI 的某個 Bug 或特殊 API 呼叫方式，明天開了新對話它又忘得一乾二淨，又得從頭糾正一次！」**
 
@@ -183,7 +183,7 @@ AI 輔助開發的最高境界，不是寫出一套永遠不變的靜態 Prompt�
 ---
 
 > 🔗 **系列文章導覽**：
-> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/)
-> - [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/2026/08/25/agent-skills-multi-agent-subagent-collaboration/)
+> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/)
+> - [【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能](/posts/agent-skills-multi-agent-subagent-collaboration/)
 > - **【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能**（本篇）
-> - [【AI工具】Agent Skills (四) - 生命週期攔截：Lifecycle Hooks 全自動防呆與守護機制](/2026/08/25/agent-skills-lifecycle-hooks/)
+> - [【AI工具】Agent Skills (四) - 生命週期攔截：Lifecycle Hooks 全自動防呆與守護機制](/posts/agent-skills-lifecycle-hooks/)

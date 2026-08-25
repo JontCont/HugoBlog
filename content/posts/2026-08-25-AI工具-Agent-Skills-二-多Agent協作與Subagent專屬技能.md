@@ -11,7 +11,7 @@ image = '/image/agent_chat_cover.png'
 
 ## 前言
 
-在 [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/) 中，我們介紹了如何將 SOP 與工具封裝成獨立的 Skill，讓單一 AI 助手具備特定領域的執行能力。
+在 [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/) 中，我們介紹了如何將 SOP 與工具封裝成獨立的 Skill，讓單一 AI 助手具備特定領域的執行能力。
 
 然而，當專案規模擴大、任務變得複雜時（例如：「請幫我開發一個會員註冊功能，包含 API、前端畫面、安全性審查、單元測試並自動產生發布紀錄」），如果只依賴**單一個 AI Agent** 來處理所有事情，往往會面臨嚴重的瓶頸：
 
@@ -280,7 +280,7 @@ invoke_subagent(
 ---
 
 > 🔗 **系列文章導覽**：
-> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/2026/06/28/rules-bridge-create-and-sync-ai-skills/)
+> - [【AI工具】Agent Skills (一) - 核心架構、生命週期與跨工具實戰](/posts/rules-bridge-create-and-sync-ai-skills/)
 > - **【AI工具】Agent Skills (二) - 多 Agent 協作：為 Subagent 量身打造專屬技能**（本篇）
-> - [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/2026/08/25/agent-skills-self-evolution-learn/)
-> - [【AI工具】Agent Skills (四) - 生命週期攔截：Lifecycle Hooks 全自動防呆與守護機制](/2026/08/25/agent-skills-lifecycle-hooks/)
+> - [【AI工具】Agent Skills (三) - 自我進化：結合 /learn 讓 AI 自動長出新技能](/posts/agent-skills-self-evolution-learn/)
+> - [【AI工具】Agent Skills (四) - 生命週期攔截：Lifecycle Hooks 全自動防呆與守護機制](/posts/agent-skills-lifecycle-hooks/)
