@@ -400,7 +400,7 @@ function initializeCodeCopyButtons() {
   var codeBlocks = document.querySelectorAll('pre > code');
   codeBlocks.forEach(function (code) {
     var pre = code.parentElement;
-    if (!pre || pre.dataset.copyReady === 'true') return;
+    if (!pre || pre.classList.contains('mermaid') || pre.dataset.copyReady === 'true') return;
     pre.dataset.copyReady = 'true';
     pre.classList.add('code-block');
 

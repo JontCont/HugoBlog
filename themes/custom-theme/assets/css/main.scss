@@ -520,6 +520,26 @@ main,header,footer { display: block; }
   word-break: normal;
   word-wrap: normal;
 }
+.article-content pre.mermaid,
+.article-content .mermaid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  overflow-x: auto;
+  text-align: center;
+}
+.article-content pre.mermaid svg,
+.article-content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
 .article-content table {
   border-collapse: collapse;
   display: block;
