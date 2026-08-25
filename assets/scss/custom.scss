@@ -1,0 +1,343 @@
+/* ── Gallery Group ────────────────────────────────── */
+.gallery-group-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 1rem;
+}
+
+.gallery-group {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    border: 1px solid var(--card-separator-color);
+    background: var(--card-background);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    &__cover {
+        height: 140px;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--accent-color) 0%, hsl(258, 80%, 72%) 100%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+
+    &__info {
+        padding: 12px 14px;
+
+        h3 {
+            margin: 0 0 4px;
+            font-size: 1.5rem;
+            color: var(--card-text-color-main);
+        }
+
+        p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--card-text-color-tertiary);
+        }
+    }
+}
+
+/* ── View Toggle Button ────────────────────────────── */
+.view-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: var(--section-separation);
+    justify-content: flex-end;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border: 1.5px solid var(--card-separator-color);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--card-text-color-tertiary);
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        &.active {
+            color: var(--accent-color-text);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        span {
+            @media (max-width: 500px) {
+                display: none;
+            }
+        }
+    }
+}
+
+/* ── List Mode (default, no image) ───────────────── */
+.article-list:not(.article-list--grid) {
+    article {
+        // Hide cover image in list view
+        .article-image {
+            display: none;
+        }
+
+        // Compact horizontal layout: show content neatly
+        &.has-image .article-header {
+            flex-direction: column;
+        }
+
+        .article-details {
+            padding: 20px 24px;
+        }
+
+        .article-title {
+            font-size: 1.8rem;
+        }
+
+        // Show subtitle/description in list view
+        .article-subtitle {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 1.4rem;
+            margin-top: 6px;
+        }
+    }
+}
+
+/* ── Grid Mode ────────────────────────────────────── */
+.article-list--grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--section-separation);
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        .article-image--placeholder {
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, hsl(258, 80%, 72%) 100%);
+            border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+            flex-shrink: 0;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .article-image img {
+            height: 180px;
+        }
+
+        .article-details {
+            padding: 16px;
+        }
+
+        .article-title {
+            font-size: 1.7rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
+
+/* ── Table of Contents (TOC) Custom Styling ────────────────────────── */
+.toc-nav {
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--card-separator-color) transparent;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--card-separator-color);
+        border-radius: 4px;
+        &:hover {
+            background-color: var(--accent-color);
+        }
+    }
+
+    ul, ol {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    li {
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        
+        a {
+            display: block;
+            padding: 8px 12px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            color: var(--card-text-color-secondary);
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 6px 6px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:hover {
+                color: var(--accent-color);
+                background-color: color-mix(in srgb, var(--accent-color) 6%, transparent);
+                padding-left: 16px;
+            }
+        }
+
+        // Active State
+        &.active-class > a {
+            color: var(--accent-color) !important;
+            font-weight: 600 !important;
+            border-left-color: var(--accent-color) !important;
+            background-color: color-mix(in srgb, var(--accent-color) 10%, transparent) !important;
+            padding-left: 16px;
+        }
+
+        // Hierarchy Indentation for nested headings
+        ul, ol {
+            margin-left: 12px !important;
+            border-left: 1px solid var(--card-separator-color);
+            margin-top: 2px;
+            margin-bottom: 2px;
+
+            li a {
+                font-size: 1.2rem;
+                padding: 6px 12px 6px 16px;
+                
+                &:hover {
+                    padding-left: 20px;
+                }
+            }
+
+            li.active-class > a {
+                padding-left: 20px;
+            }
+
+            ul, ol {
+                margin-left: 8px !important;
+                
+                li a {
+                    font-size: 1.15rem;
+                    padding: 5px 12px 5px 20px;
+                    
+                    &:hover {
+                        padding-left: 24px;
+                    }
+                }
+
+                li.active-class > a {
+                    padding-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+/* ── Code Block & Copy Button Layout Adjustments ───────────────────── */
+.highlight {
+    position: relative;
+    padding: 32px 20px 20px 20px !important;
+    margin: 24px 0 !important;
+    border-radius: var(--card-border-radius);
+    
+    pre {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    code {
+        display: inline-block !important;
+        padding-right: 60px !important; // prevent code text from sliding under copy button on scroll
+        min-width: 100%;
+    }
+
+
+    &:hover {
+        .copyCodeButton {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    }
+}
+
+.copyCodeButton {
+    position: absolute;
+    top: 12px !important;
+    right: 12px !important;
+    background: color-mix(in srgb, var(--card-background) 85%, transparent) !important;
+    border: 1px solid var(--card-separator-color) !important;
+    backdrop-filter: blur(4px);
+    box-shadow: var(--shadow-l1) !important;
+    border-radius: 6px !important;
+    padding: 5px 10px !important;
+    color: var(--card-text-color-secondary) !important;
+    cursor: pointer;
+    font-size: 1.15rem !important;
+    font-weight: 500;
+    opacity: 0 !important;
+    transform: translateY(2px) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    &:hover {
+        background: var(--accent-color) !important;
+        color: var(--accent-color-text) !important;
+        border-color: var(--accent-color) !important;
+        box-shadow: var(--shadow-l2) !important;
+    }
+
+    &:active {
+        transform: scale(0.95) !important;
+    }
+}
+

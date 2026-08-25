@@ -10,7 +10,7 @@ keywords = []
 
 ## ANCM 是什麼？
 
-ASP.NET Core 模組 (ANCM) 是一個本機 IIS 模組，用於在 IIS 上托管 ASP.NET Core 應用程序。它允許 IIS 作為正向代理，用來將 web 請求轉發給後端的 ASP.NET Core 應用程序。
+ASP.NET Core 模組 (ANCM) 是一個本機 IIS 模組，用於在 IIS 上托管 ASP.NET Core 應用程序。它允許 IIS 作為反向代理 (reverse proxy)，用來將 web 請求轉發給後端的 ASP.NET Core 應用程序。
 
 ### ANCM 的運作方式
 

@@ -33,16 +33,6 @@
     </div>
   </div>
 
-  {{/* Search bar (hidden by default, toggled on click) */}}
-  <div class="header-search-bar" id="header-search-bar" hidden>
-    <form class="header-search-form" action="/search/" method="get" role="search" aria-label="{{ T "siteSearch" }}">
-      <input type="search" name="q" id="header-search-input"
-        placeholder="{{ T "searchPlaceholder" }}" autocomplete="off" autocorrect="off" aria-label="{{ T "searchKeyword" }}">
-      <button type="submit">{{ T "search" }}</button>
-      <button type="button" class="search-close-btn" id="search-close-btn" aria-label="{{ T "closeSearch" }}">✕</button>
-    </form>
-  </div>
-
   {{/* Mobile nav panel (hidden by default) */}}
   <nav class="mobile-nav-panel" id="mobile-nav-panel" hidden aria-label="{{ T "mobileMenu" }}">
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}

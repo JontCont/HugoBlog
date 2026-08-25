@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
 image = 'https://d.line-scdn.net/stf/linecorp/en/pr/quickreply_en.png'
-weight = 1
 +++
 ## 使用NUGET
 1. [StartFMS.Extensions.Line](https://www.nuget.org/packages/StartFMS.Extensions.Line)

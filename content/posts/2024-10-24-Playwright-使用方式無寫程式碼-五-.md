@@ -39,7 +39,7 @@ setup("authenticate", async ({ page, browser }) => {
 
 這邊我們封不動作在 setup 裡面，命名上官方使用 ```auth.setup.ts``` 來區分是驗證的動作，這樣之後要使用的時候就可以直接呼叫這個 setup 來使用。
 
-### 二、設定環境 plawright.config.ts
+### 二、設定環境 playwright.config.ts
 
 說明以下範例。他是把全部的setup 都放在一起來執行，之後會透握 user.json 來驗證身分，如果沒有這個檔案就會重新登入。
 需要注意對應的瀏覽器若需要登入情況下，需要加入 ```dependencies: ["auth.setup"]``` 來告訴他需要先登入。 ```storageState: ".auth/user.json"``` 這個是用來存放登入資訊的檔案，每次執行它會抓一次 ```storageState```給瀏覽器。
@@ -121,13 +121,13 @@ async function SignPage(page: Page) {
 }
 ```
 
-### 二、UI 模式 vs Moderate 模式
+### 二、UI 模式 vs Worker-scoped Fixture 模式
 
 基本上這範例是稱作為 [UI 模式] 因此會需要有UI操作登入使用者，才能夠登入。以下為官方網站的說明。
 
 > UI mode 將不會預設執行 setup 專案以提高測試速度。我們建議在現有身份驗證過期時，偶爾手動執行 auth.setup.ts 來進行身份驗證。
 
-如何實現 modelrate 模式，可以參考官方以下範例。
+如何實現 Worker-scoped Fixture 模式（每個 Worker 獨立驗證），可以參考官方以下範例。
 
 ```ts
 import { test as baseTest, expect } from '@playwright/test';

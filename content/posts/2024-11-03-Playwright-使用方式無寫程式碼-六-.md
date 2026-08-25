@@ -42,11 +42,19 @@ selector 在完全對於前端沒有經驗來說， 瀏覽器裡開發者工具�
 
 
 ### waitForSelector 等待元素出現/消失
+
+> ⚠️ **注意**：`waitForSelector()` 在 Playwright v1.25+ 已被棄用，建議改用 Locator API：
+> ```ts
+> await page.locator('text=執行成功').waitFor({ state: 'visible' })
+> // 或搭配 expect 斷言
+> await expect(page.locator('text=執行成功')).toBeVisible()
+> ```
+
 playwright 提供了一個等待元素出現的方法，這個方法是非常重要的，因為有時候我們會遇到元素還沒出現就去操作，這樣會造成錯誤，這時候我們就可以透過 waitForSelector 來等待元素出現。如下方範例 :
 
 ```ts
-await page.waitForSelector('text=執行成功', {state: 'visible'}) // 等待元素出現
-await page.waitForSelector('text=執行成功', {state: 'hidden'}) // 等待元素出現
+await page.locator('text=執行成功', {state: 'visible'}) // 等待元素出現
+await page.locator('text=執行成功', {state: 'hidden'}) // 等待元素消失
 ```
 
 waitForSelector 的 state 基本上只有這幾個選項，預設為 `'visible'`。
@@ -65,7 +73,7 @@ test('locator / waitForSelector', async ({ page }) => {
   await page.goto('https://www.google.com');
   await page.locator('input[name="q"]').fill('playwright');
   await page.locator('input[name="q"]').press('Enter');
-  await page.waitForSelector('text=playwright', {state: 'visible'});
+  await page.locator('text=playwright', {state: 'visible'});
   const title = await page.title();
   expect(title).toBe('playwright - Google 搜尋');
 });

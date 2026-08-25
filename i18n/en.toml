@@ -138,3 +138,10 @@ other = "Back to tags"
 
 [noPostsInTerm]
 other = "No posts found for this tag yet."
+
+[article]
+tableOfContents = "Table of Contents"
+
+[article.codeblock]
+copy = "Copy"
+copied = "Copied!"

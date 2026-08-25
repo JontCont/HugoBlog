@@ -1,42 +1,234 @@
 baseURL = 'http://localhost:1313/'
-languageCode = 'zh-TW'
 title = 'JConte'
 theme = 'custom-theme'
+paginate = 12
+hasCJKLanguage = true
+defaultContentLanguage = 'zh-tw'
 
+[languages.zh-tw]
+  languageCode = 'zh-TW'
+  languageName = '繁體中文'
+  weight = 1
 
-[[menus.main]]
-	name   = '首頁'
-	url    = '/'
-	weight = 1
-
-[[menus.main]]
-	name   = '標籤'
-	url    = '/tags/'
-	weight = 2
-
-[[menus.main]]
-	name   = '關於'
-	url    = '/about/'
-	weight     = 3
-
-
-[[menus.main]]
-	identifier = 'more'
-	name       = '其他'
-	url        = '#'
-	weight     = 4
-
-
-[[menus.main]]
-	name   = '圖片檔'
-	url    = '/gallery/'
-	parent = 'more'
-	weight = 3
+[languages.en]
+  languageCode = 'en'
+  languageName = 'English'
+  weight = 2
+  [languages.en.params]
+    description = 'Tech notes & dev insights'
+    [languages.en.params.sidebar]
+      subtitle = 'Software Engineer / Tech Notes'
 
 [outputs]
-  home = ['HTML', 'JSON']
+  home = ['HTML', 'RSS', 'JSON']
 
-[params.article]
-	showToc = true
-	tocTitle = '文章目錄'
-	tocSticky = true
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  lineNos = false
+
+# ─── zh-tw Menu ────────────────────────────────────────
+[[languages.zh-tw.menus.main]]
+  name   = '首頁'
+  url    = '/'
+  weight = 1
+  [languages.zh-tw.menus.main.params]
+    icon = 'home'
+
+[[languages.zh-tw.menus.main]]
+  identifier = 'categories'
+  name   = '分類'
+  weight = 2
+  [languages.zh-tw.menus.main.params]
+    icon = 'categories'
+
+[[languages.zh-tw.menus.main]]
+  parent = 'categories'
+  name   = '分類總覽'
+  url    = '/categories/'
+  weight = 1
+  [languages.zh-tw.menus.main.params]
+    icon = 'categories'
+
+[[languages.zh-tw.menus.main]]
+  parent = 'categories'
+  name   = '標籤'
+  url    = '/tags/'
+  weight = 2
+  [languages.zh-tw.menus.main.params]
+    icon = 'tag'
+
+[[languages.zh-tw.menus.main]]
+  parent = 'categories'
+  name   = '圖片檔'
+  url    = '/gallery/'
+  weight = 3
+  [languages.zh-tw.menus.main.params]
+    icon = 'link'
+
+[[languages.zh-tw.menus.main]]
+  name   = '歸檔'
+  url    = '/archives/'
+  weight = 3
+  [languages.zh-tw.menus.main.params]
+    icon = 'archives'
+
+[[languages.zh-tw.menus.main]]
+  name   = '關於'
+  url    = '/about/'
+  weight = 4
+  [languages.zh-tw.menus.main.params]
+    icon = 'user'
+
+# ─── English Menu ──────────────────────────────────────
+[[languages.en.menus.main]]
+  name   = 'Home'
+  url    = '/'
+  weight = 1
+  [languages.en.menus.main.params]
+    icon = 'home'
+
+[[languages.en.menus.main]]
+  identifier = 'categories'
+  name   = 'Categories'
+  weight = 2
+  [languages.en.menus.main.params]
+    icon = 'categories'
+
+[[languages.en.menus.main]]
+  parent = 'categories'
+  name   = 'All Categories'
+  url    = '/categories/'
+  weight = 1
+  [languages.en.menus.main.params]
+    icon = 'categories'
+
+[[languages.en.menus.main]]
+  parent = 'categories'
+  name   = 'Tags'
+  url    = '/tags/'
+  weight = 2
+  [languages.en.menus.main.params]
+    icon = 'tag'
+
+[[languages.en.menus.main]]
+  parent = 'categories'
+  name   = 'Gallery'
+  url    = '/gallery/'
+  weight = 3
+  [languages.en.menus.main.params]
+    icon = 'link'
+
+[[languages.en.menus.main]]
+  name   = 'Archives'
+  url    = '/archives/'
+  weight = 3
+  [languages.en.menus.main.params]
+    icon = 'archives'
+
+[[languages.en.menus.main]]
+  name   = 'About'
+  url    = '/about/'
+  weight = 4
+  [languages.en.menus.main.params]
+    icon = 'user'
+
+# [[menus.social]]
+#   name = 'GitHub'
+#   url  = 'https://github.com'
+#   [menus.social.params]
+#     icon = 'brand-github'
+
+# ─── Related Content ────────────────────────────────────
+[related]
+  includeNewer = true
+  threshold    = 80
+  toLower      = false
+  [[related.indices]]
+    name   = "tags"
+    weight = 100
+  [[related.indices]]
+    name   = "categories"
+    weight = 200
+
+# ─── Theme Params ───────────────────────────────────────
+[params]
+  mainSections = ['posts']
+  description  = '分享技術筆記與開發心得'
+  rssFullContent = true
+
+  [params.author]
+    name   = 'John Conte'
+    bio    = '全端軟體工程師，專注 C# / .NET、Azure 雲端架構與 AI 實戰應用。'
+    avatar = 'https://avatars.githubusercontent.com/u/52921053?v=4'
+
+  [[params.social]]
+    name = 'Discord'
+    url  = 'https://discord.gg/JbzpfqGJDF'
+    icon = 'discord'
+
+  [[params.social]]
+    name = 'GitHub'
+    url  = 'https://github.com/JontCont'
+    icon = 'github'
+
+  [[params.social]]
+    name = 'LinkedIn'
+    url  = 'https://www.linkedin.com/in/%E5%9C%8B%E5%8B%9B-%E9%A6%AC-760860201/'
+    icon = 'linkedin'
+
+  [params.footer]
+    since      = 2021
+    customText = ''
+
+  [params.dateFormat]
+    published   = '2006-01-02'
+    lastUpdated = '2006-01-02'
+
+  [params.sidebar]
+    compact = false
+    emoji   = '💻'
+    subtitle = '軟體工程師 / 技術筆記'
+    avatar   = 'https://avatars.githubusercontent.com/u/52921053?v=4'
+
+  [params.article]
+    headingAnchor = true
+    math          = false
+    toc           = true
+    readingTime   = true
+    [params.article.list]
+      showTags = true
+    [params.article.license]
+      enabled = false
+
+  [params.widgets]
+    [[params.widgets.homepage]]
+      type = 'search'
+    [[params.widgets.homepage]]
+      type = 'archives'
+    [[params.widgets.homepage]]
+      type = 'tag-cloud'
+    [[params.widgets.page]]
+      type = 'toc'
+    [[params.widgets.page]]
+      type = 'tag-cloud'
+
+  [params.colorScheme]
+    toggle  = true
+    default = 'auto'
+
+  [params.imageProcessing]
+    autoOrient = false
+    [params.imageProcessing.external]
+      timeout = '2s'
+    [params.imageProcessing.content]
+      enabled = true
+    [params.imageProcessing.thumbnail]
+      enabled = true
+
+  [params.comments]
+    enabled = false
+
+  [params.opengraph.twitter]
+    card = 'summary_large_image'

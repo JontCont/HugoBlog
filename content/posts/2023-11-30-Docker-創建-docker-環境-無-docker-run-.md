@@ -17,8 +17,8 @@ image = 'https://www.docker.com/wp-content/uploads/2021/09/Moby-run.png'
 刪除Images如下方指令。如果執行後跟下方圖片一樣有錯誤訊息，可以看到 container 還有在使用中是不可以任意刪除，所以記得需要先刪除 container 才能刪除 Images。
 
 ```cmd
-docker rmi [ContainerID]
-docker rmi [names] 
+docker rm [ContainerID]
+docker rm [names] 
 ```
 
 ![](/image/20221128_22-19-14.png)

@@ -8,7 +8,6 @@ categories = ['後端技術', 'LINQPad']
 tags = ['LINQPad']
 keywords = []
 image = '/img/Linq-introduce/bg.jpg'
-weight = 1
 +++
 
 # 語言整合查詢 - Linq 簡介

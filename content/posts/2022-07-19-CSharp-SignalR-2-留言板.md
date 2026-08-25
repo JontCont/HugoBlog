@@ -93,5 +93,3 @@ image = '/img/dotnet/bg/cs_bg_005.png'
 
 ```
 
-![](/img/dotnet/cs/signalr/Snipaste_2022-07-19_22-12-27.png)
-

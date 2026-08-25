@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#', 'Youtube']
 tags = ['C#', 'Youtube', 'API']
 keywords = ['Form', 'C#']
 image = 'https://www.youtube.com/s/desktop/82a4cf4f/img/favicon_144x144.png'
-weight = 1
 +++
 
 ## 前言

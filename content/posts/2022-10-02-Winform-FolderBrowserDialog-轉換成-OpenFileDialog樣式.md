@@ -7,11 +7,10 @@ categories = ['後端技術', 'C#', 'Winform']
 tags = ['C#', 'Net FrameWork', 'Winform']
 keywords = []
 image = 'https://plctech.com.vn/wp-content/uploads/2021/04/winforms-la-gi-3.jpg'
-weight = 1
 +++
 ## Winform FolderBrowserDialog
 Winform 開發 FolderBrowserDialog 為預設畫面。FolderBrowserDialog主要是尋找檔案、畫面上不怎麼好用，用IFileOpenDialog接口實現類OpenFileDialog樣式。
-![](/img/dotnet/cs/winform/20221002_22-41-27.png)
+
 
 ### 程式碼
 

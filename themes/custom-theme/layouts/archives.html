@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  <section class="archives-page card-surface">
+    <header class="archives-header">
+      <p class="archives-eyebrow">Archives</p>
+      <h1>{{ .Title }}</h1>
+      <p class="archives-subtitle">共 {{ len $posts }} 篇文章</p>
+    </header>
+
+    <div class="archives-timeline">
+      {{ range ($posts.GroupByDate "2006") }}
+        <div class="archive-year-group">
+          <h2 class="archive-year">{{ .Key }} <span class="archive-year-count">({{ len .Pages }})</span></h2>
+          <ul class="archive-list">
+            {{ range .Pages }}
+              <li>
+                <a class="archive-item" href="{{ .RelPermalink }}" aria-label="{{ .LinkTitle }}">
+                  <time class="archive-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "01-02" }}</time>
+                  <span class="archive-title">{{ .LinkTitle }}</span>
+                  {{ with .GetTerms "categories" }}
+                    <span class="archive-category">{{ (index . 0).LinkTitle }}</span>
+                  {{ end }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

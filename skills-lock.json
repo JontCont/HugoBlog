@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "smithery.ai",
+      "sourceType": "well-known",
+      "computedHash": "02a36ed61efe8cc2792b87138d4fdf1c8927ab424351565d7439664c816674e1"
+    },
+    "playwright-archive": {
+      "source": "JontCont/playwright-autotest-skills",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-archive/SKILL.md",
+      "computedHash": "5d1457c37d0635c2ed6eef4cce64b0c074cc35eaf1b2a39e59bd3e05feb9f24a"
+    },
+    "playwright-discuss": {
+      "source": "JontCont/playwright-autotest-skills",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-discuss/SKILL.md",
+      "computedHash": "fd72e79573898a57ff182892abb20e0b7575c218efda0e808c67858cfca5aac9"
+    },
+    "playwright-implement": {
+      "source": "JontCont/playwright-autotest-skills",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-implement/SKILL.md",
+      "computedHash": "ab6111eccd598663fb7e879c5f316f3a65162af1d69e3653815777cdaa2d5b40"
+    },
+    "playwright-plan": {
+      "source": "JontCont/playwright-autotest-skills",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-plan/SKILL.md",
+      "computedHash": "5963d946fed25acbdb2d12d7d35caa89924612a18015a8d8ef9e54f3917e3744"
+    },
+    "playwright-run": {
+      "source": "JontCont/playwright-autotest-skills",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-run/SKILL.md",
+      "computedHash": "5b03ef445d84ab1e284f43705262ce5ceebb1f63c7709afd27500678e2e21d80"
+    },
+    "rules-bridge": {
+      "source": "JontCont/rules-bridge",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "f9e3601c3ba8986922113a2d0793874e135022451eb1717c5fad493c92ca4faf"
+    }
+  }
+}

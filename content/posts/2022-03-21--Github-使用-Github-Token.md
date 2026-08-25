@@ -16,12 +16,11 @@ image = '/img/GitHub/bg/bg_01.jpg'
 
 ## 創建 Personal access tokens
 點選設定後，左側最底下 ``` Developer settings```選擇 ``` Personal access tokens```即可。設定上需要注意看裡面內容進行設定。
-![](/img/GitHub/basic/tokens_01.png)
-![](/img/GitHub/basic/tokens_02.png)
-![](/img/GitHub/basic/tokens_03.png)
+
+
+
 
 設定內容有包含到組織相關的存取，可以透過這種方式取的組織權限。
-![](/img/GitHub/basic/tokens_04.png)
+
 
 然後就可以使用Token取得 GitHub repository。*這邊必須要注意 Create 出來的Token 只會出現一次，如果不小心沒存檔無法再取得一次。*
-![](/img/GitHub/basic/tokens_05.png)

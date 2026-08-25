@@ -61,17 +61,17 @@ GO
 
 ## 連接LinQ
 畫面左邊可以看到有 [add connection] 字眼，點選後選擇 Sql Server 選項，如果不是Sql Server可以選擇下方選項。
-![](/img/linq_use_day02/01.jpg)
-![](/img/linq_use_day02/02.jpg)
+
+
 這裡會需要自己得登入Sql Server 後，按下完成即可。
-![](/img/linq_use_day02/03.jpg)
-![](/img/linq_use_day02/04.jpg)
+
+
 
 ---
 
 ## 使用 LinQPad
 使用前到LinQPad記得要切換資料庫，再來請自行在資料庫key資料。
-![](/img/linq_use_day02/05.jpg)
+
 
 ## Select 字句
 linQ 有兩種寫法，LINQ Query Expression、Lambda Expression。

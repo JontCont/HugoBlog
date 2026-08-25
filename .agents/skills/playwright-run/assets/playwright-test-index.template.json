@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "tests": [
+    {
+      "caseId": "AUTH-000",
+      "module": "auth",
+      "workItem": "WORK-1000",
+      "title": "supports the legacy login form",
+      "spec": "tests/test-cases/WORK-1000/regression.spec.ts",
+      "status": "archived",
+      "archivedAt": "2026-07-27",
+      "archiveReason": "The legacy login form was removed.",
+      "replacedBy": "AUTH-001",
+      "tags": [],
+      "screenshots": []
+    },
+    {
+      "caseId": "AUTH-001",
+      "module": "auth",
+      "workItem": "WORK-1234",
+      "title": "redirects an authenticated user to the dashboard",
+      "spec": "tests/test-cases/WORK-1234/feature.spec.ts",
+      "status": "active",
+      "tags": ["@smoke"],
+      "screenshots": ["auth-dashboard"]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 ---
 title: 搜尋
 layout: search
-slug: search
-url: /search/
+url: /zh-tw/search/
 outputs:
   - html
   - json
+publishResources: false
 ---

@@ -43,13 +43,13 @@ dotnet new -h|--help
 ### 新增 
 網站 : [Nuget](https://www.nuget.org/)
 Nuget 是目前最常使用的package，使用方式也相對簡單。
-![](/img/dotnet/cs/cs_vsc_002.png)
+
 
 選擇其中你要的package ，按下你目前要使用的Command進行使用即可。
 ```
 dotnet add dotnetMVC_itextsharp package iTextSharp --version 5.5.13.3
 ```
-![](/img/dotnet/cs/cs_vsc_001.png)
+
 
 ### 移除
 移除套件可以參考下方指令 。

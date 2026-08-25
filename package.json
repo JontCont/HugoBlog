@@ -1,0 +1,29 @@
+{
+  "name": "blog-hugo",
+  "version": "1.0.0",
+  "description": "基於 [Hugo](https://gohugo.io/) 建立的個人技術部落格，涵蓋前端、後端、DevOps 等各類開發筆記。",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.1"
+  },
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:homepage": "playwright test --grep @workitem:homepage-core-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JontCont/blog-hugo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JontCont/blog-hugo/issues"
+  },
+  "homepage": "https://github.com/JontCont/blog-hugo#readme"
+}

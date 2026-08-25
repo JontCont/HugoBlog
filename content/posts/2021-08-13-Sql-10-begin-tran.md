@@ -9,13 +9,13 @@ keywords = ['SQL']
 image = '/img/SQL/bg/bg_01.png'
 +++
 
-T-SQL 平常使用都會直接 Update、Insert、Delet 之類動作，但是在很多時候會有不小心輸入錯誤的問題。平常如果再已經上線、正式使用資料庫時候非常建議BEGIN TRIN ，可以先確認完畢資料後再同步交期或是回復交期。
+T-SQL 平常使用都會直接 Update、Insert、Delet 之類動作，但是在很多時候會有不小心輸入錯誤的問題。平常如果再已經上線、正式使用資料庫時候非常建議BEGIN TRIN ，可以先確認完畢資料後再同步交易或是回復交易。
 
 ## BEGIN TRANSACTION
 使用方式:
-- BEGIN TRANSACTION    : 開啟交期。輸入```BEING TRAN ```即可。
-- COMMIT TRANSACTION   : 確認交期。輸入```COMMIT ```即可。
-- ROLLBACK TRANSACTION : 回復交期。輸入```ROLLBACK ```即可。
+- BEGIN TRANSACTION    : 開啟交易。輸入```BEGIN TRAN ```即可。
+- COMMIT TRANSACTION   : 確認交易。輸入```COMMIT ```即可。
+- ROLLBACK TRANSACTION : 回復交易。輸入```ROLLBACK ```即可。
 
 ```sql
 BEGIN TRAN
@@ -28,7 +28,7 @@ COMMIT
 
 實際執行動作。
 - 先用 SELECT 查看、Where 要更新的欄位
-- BEING TRAN 包覆 Insert 、Update 、 DELETE等
+- BEGIN TRAN 包覆 Insert 、Update 、 DELETE等
 - 執行後，從SELECT 結果確認才執行 ```COMMIT``` 或是 ```ROLLBACK```
 
 

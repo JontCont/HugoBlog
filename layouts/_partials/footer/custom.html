@@ -1,0 +1,2 @@
+{{ $js := resources.Get "js/view-toggle.js" | minify | resources.Fingerprint "sha256" }}
+<script src="{{ $js.RelPermalink }}" defer></script>

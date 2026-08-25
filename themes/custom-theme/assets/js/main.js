@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initializeHeaderBehavior();
   initializeSearchToggle();
   initializeMobileNav();
+  initializeDropdowns();
   initializeReadingProgress();
   initializeTocActiveTracking();
 });
@@ -51,58 +52,166 @@ function initializeHeaderBehavior() {
   onScroll();
 }
 
-/* ── Search Toggle ─────────────────────────────────────── */
+/* ── Search Toggle & Command Palette Modal ─────────────── */
 function initializeSearchToggle() {
   var toggleBtn = document.getElementById('search-toggle-btn');
-  var closeBtn = document.getElementById('search-close-btn');
-  var searchBar = document.getElementById('header-search-bar');
-  var searchInput = document.getElementById('header-search-input');
+  var modal = document.getElementById('search-modal');
+  var backdrop = document.getElementById('search-modal-backdrop');
+  var closeBtn = document.getElementById('search-modal-close');
+  var modalInput = document.getElementById('search-modal-input');
+  var modalResults = document.getElementById('search-modal-results');
+  var modalStatus = document.getElementById('search-modal-status');
 
-  if (!toggleBtn || !searchBar) return;
+  if (!modal) return;
 
-  function openSearch() {
-    searchBar.hidden = false;
-    toggleBtn.setAttribute('aria-expanded', 'true');
-    toggleBtn.classList.add('search-toggle--active');
-    if (searchInput) {
-      window.setTimeout(function () { searchInput.focus(); }, 50);
+  var searchIndex = [];
+  var indexLoadingPromise = null;
+  var timer = null;
+  var activeResultIndex = -1;
+
+  function loadIndex() {
+    if (indexLoadingPromise) return indexLoadingPromise;
+    indexLoadingPromise = fetch('/index.json')
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (data) { searchIndex = Array.isArray(data) ? data : []; return searchIndex; })
+      .catch(function () { searchIndex = []; return []; });
+    return indexLoadingPromise;
+  }
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.classList.add('search-toggle--active');
+    }
+    loadIndex();
+    if (modalInput) {
+      window.setTimeout(function () {
+        modalInput.focus();
+        modalInput.select();
+      }, 50);
     }
   }
 
-  function closeSearch() {
-    searchBar.hidden = true;
-    toggleBtn.setAttribute('aria-expanded', 'false');
-    toggleBtn.classList.remove('search-toggle--active');
-  }
-
-  toggleBtn.addEventListener('click', function () {
-    if (searchBar.hidden) {
-      openSearch();
-    } else {
-      closeSearch();
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('search-toggle--active');
     }
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeSearch);
+    activeResultIndex = -1;
   }
 
-  // Close on Escape
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (modal.hidden) openModal(); else closeModal();
+    });
+  }
+
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Global Keyboard Shortcuts (Cmd+K / Ctrl+K & Escape)
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !searchBar.hidden) {
-      closeSearch();
-      toggleBtn.focus();
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (modal.hidden) openModal(); else closeModal();
+    } else if (e.key === 'Escape' && !modal.hidden) {
+      e.preventDefault();
+      closeModal();
     }
   });
 
-  // Pre-fill from URL query param
-  if (searchInput) {
-    var params = new URLSearchParams(window.location.search);
-    var q = params.get('q');
-    if (q) {
-      searchInput.value = q;
-      openSearch();
+  // Modal Instant Search
+  if (modalInput && modalResults) {
+    modalInput.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { runModalSearch(modalInput.value); }, 150);
+    });
+
+    modalInput.addEventListener('keydown', function (e) {
+      var items = modalResults.querySelectorAll('.search-modal-item');
+      if (items.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeResultIndex = (activeResultIndex + 1) % items.length;
+        updateActiveResult(items);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeResultIndex = (activeResultIndex - 1 + items.length) % items.length;
+        updateActiveResult(items);
+      } else if (e.key === 'Enter') {
+        if (activeResultIndex >= 0 && items[activeResultIndex]) {
+          e.preventDefault();
+          items[activeResultIndex].click();
+        }
+      }
+    });
+  }
+
+  function updateActiveResult(items) {
+    items.forEach(function (el, idx) {
+      if (idx === activeResultIndex) {
+        el.classList.add('search-modal-item--active');
+        el.scrollIntoView({ block: 'nearest' });
+      } else {
+        el.classList.remove('search-modal-item--active');
+      }
+    });
+  }
+
+  function runModalSearch(query) {
+    query = (query || '').trim();
+    activeResultIndex = -1;
+
+    if (!query) {
+      modalResults.innerHTML = '';
+      if (modalStatus) modalStatus.textContent = '';
+      return;
     }
+
+    if (modalStatus) modalStatus.textContent = '搜尋中…';
+
+    loadIndex().then(function (idx) {
+      var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      var matched = idx.filter(function (item) {
+        var haystack = ((item.title || '') + ' ' + (item.content || '') + ' ' + (item.section || '')).toLowerCase();
+        return terms.every(function (t) { return haystack.includes(t); });
+      }).slice(0, 15);
+
+      modalResults.innerHTML = '';
+
+      if (matched.length === 0) {
+        if (modalStatus) modalStatus.textContent = '找不到「' + query + '」相關結果';
+        return;
+      }
+
+      if (modalStatus) modalStatus.textContent = '找到 ' + matched.length + ' 篇相關文章';
+
+      matched.forEach(function (item) {
+        var a = document.createElement('a');
+        a.className = 'search-modal-item';
+        a.href = item.permalink || item.url || '#';
+        var date = item.date ? item.date.substring(0, 10) : '';
+
+        a.innerHTML =
+          '<div class="search-modal-item__head">' +
+            '<span class="search-modal-item__title">' + escapeHtml(item.title || '無標題') + '</span>' +
+            '<span class="search-modal-item__date">' + escapeHtml(date) + '</span>' +
+          '</div>' +
+          (item.summary ? '<p class="search-modal-item__summary">' + escapeHtml(item.summary.substring(0, 110)) + '…</p>' : '');
+
+        a.addEventListener('click', function () {
+          closeModal();
+        });
+
+        modalResults.appendChild(a);
+      });
+    });
   }
 }
 
@@ -140,6 +249,43 @@ function initializeMobileNav() {
   // Close when a nav link is clicked
   panel.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', closeMenu);
+  });
+}
+
+/* ── Dropdown Toggles ─────────────────────────────────── */
+function initializeDropdowns() {
+  var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      var panel = toggle.nextElementSibling;
+
+      // Close other dropdowns
+      dropdownToggles.forEach(function (other) {
+        if (other !== toggle) {
+          other.setAttribute('aria-expanded', 'false');
+          if (other.nextElementSibling) other.nextElementSibling.classList.remove('dropdown-panel--open');
+        }
+      });
+
+      if (isExpanded) {
+        toggle.setAttribute('aria-expanded', 'false');
+        if (panel) panel.classList.remove('dropdown-panel--open');
+      } else {
+        toggle.setAttribute('aria-expanded', 'true');
+        if (panel) panel.classList.add('dropdown-panel--open');
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.site-nav__item--dropdown')) {
+      dropdownToggles.forEach(function (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        if (toggle.nextElementSibling) toggle.nextElementSibling.classList.remove('dropdown-panel--open');
+      });
+    }
   });
 }
 
@@ -224,9 +370,12 @@ function initializeViewToggle() {
   if (!listBtn || !gridBtn || !container) return;
 
   var storageKey = 'blog-view-mode';
-  var savedView = localStorage.getItem(storageKey) || 'list';
+  var savedView = 'list';
+  try {
+    savedView = localStorage.getItem(storageKey) || 'list';
+  } catch (_) {}
 
-  function setView(mode) {
+  function setView(mode, save) {
     if (mode === 'grid') {
       container.classList.add('blog-main--grid');
       gridBtn.classList.add('view-toggle__btn--active');
@@ -236,12 +385,14 @@ function initializeViewToggle() {
       listBtn.classList.add('view-toggle__btn--active');
       gridBtn.classList.remove('view-toggle__btn--active');
     }
-    try { localStorage.setItem(storageKey, mode); } catch (_) {}
+    if (save) {
+      try { localStorage.setItem(storageKey, mode); } catch (_) {}
+    }
   }
 
-  listBtn.addEventListener('click', function () { setView('list'); });
-  gridBtn.addEventListener('click', function () { setView('grid'); });
-  setView(savedView);
+  listBtn.addEventListener('click', function () { setView('list', true); });
+  gridBtn.addEventListener('click', function () { setView('grid', true); });
+  setView(savedView, false);
 }
 
 /* ── Code Copy Buttons ─────────────────────────────────── */

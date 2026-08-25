@@ -8,7 +8,6 @@ categories = ['後端技術', 'C#', 'Winform']
 tags = ['C#', 'Net FrameWork', 'Winform']
 keywords = ['Net FrameWork', 'C#', 'Core']
 image = '/image/20230303_12-36-52.png'
-weight = 1
 +++
 
 ## 前言

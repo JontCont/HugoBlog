@@ -23,18 +23,18 @@
         {{ range $posts }}
           {{ $post := . }}
           <article class="entry-card">
-            {{ with .Params.image }}
-              {{ $img := . }}
-              {{ if strings.HasPrefix $img "http" }}
-                <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
-                  <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}">
-                </a>
+            <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap" aria-label="{{ $post.Title }}">
+              {{ with .Params.image }}
+                {{ $img := . }}
+                {{ if strings.HasPrefix $img "http" }}
+                  <img class="entry-card__cover" src="{{ $img }}" alt="{{ $post.Title }}" loading="lazy">
+                {{ else }}
+                  <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}" loading="lazy">
+                {{ end }}
               {{ else }}
-                <a href="{{ $post.RelPermalink }}" class="entry-card__cover-wrap">
-                  <img class="entry-card__cover" src="{{ (strings.TrimPrefix "/" $img) | relURL }}" alt="{{ $post.Title }}">
-                </a>
+                <img class="entry-card__cover" src="{{ "images/default-cover.png" | relURL }}" alt="{{ $post.Title }}" loading="lazy">
               {{ end }}
-            {{ end }}
+            </a>
 
             <div class="entry-card__body">
               <div class="entry-card__meta">

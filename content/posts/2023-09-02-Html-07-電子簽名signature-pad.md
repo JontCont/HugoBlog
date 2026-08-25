@@ -35,7 +35,7 @@ image = '/image/20230902_22-53-07.png'
 
 ```html
     <div class="toolslist">
-        <div class="func-itme">
+        <div class="func-item">
             <label for="">功能列</label>
             <button type="button" class="button clear" data-action="clear">Clear</button>
             <button type="button" class="button" data-action="change-color">Change color</button>
@@ -51,7 +51,7 @@ image = '/image/20230902_22-53-07.png'
 ```
 
 ### css 製作
-css依據自己喜好設定，若沒有想每可以直接使用
+css依據自己喜好設定，若沒有想法可以直接使用
 ```css
 body{
     background-color: #eee;
@@ -59,7 +59,7 @@ body{
 .toolslist{
     margin: 10px;
 }
-.func-itme{display: inline-block;}
+.func-item{display: inline-block;}
 .save-item{margin-top: 5px;}
 .signature-pad {
     width: 400px;

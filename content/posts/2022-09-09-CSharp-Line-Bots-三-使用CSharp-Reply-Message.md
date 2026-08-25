@@ -7,7 +7,6 @@ categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
 image = 'https://d.line-scdn.net/stf/linecorp/en/pr/quickreply_en.png'
-weight = 1
 +++
 
 上一篇完成簡易版本的Push Message ，這邊要稍微注意一下使用量。Line 提供兩種模式給Message API使用 "Push"、"Reply"兩種模式，其中Push用來推廣方案銷售，所以次數限量上會限縮在500則，超過後需要付費才能使用。

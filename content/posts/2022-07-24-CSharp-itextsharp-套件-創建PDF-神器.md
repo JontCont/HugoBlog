@@ -118,7 +118,7 @@ doc.Add(new Paragraph(){pt});
 2. PdfPCell : 這邊是儲存cell方式(單欄)。後面可以細項設定，目前不用設定時候就會比較單存一點。
 3. AddCell : 加入單欄內容。
 
-![](/img/dotnet/cs/cs_itext_001.png)
+
 
 ### 3-2 客製表格
 如果要自定義方式，可以參考下方。設定table 一定會用到
@@ -145,7 +145,7 @@ doc.Add(new Paragraph(){pt});
   }
   doc.Add(new Paragraph(){pt});
 ```
-![](/img/dotnet/cs/cs_itext_002.png)
+
 
 ### 3-3 使用建議
 如果第一次使用可以使用下方方式，一行一行創建可以知道使用方式。按照上方範例呈現方式會像下方一樣，概念是合併不能出現下一行，不然就會有多個 Rows畫面。

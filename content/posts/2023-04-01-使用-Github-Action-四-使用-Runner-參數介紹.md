@@ -17,13 +17,13 @@ image = '/image/20230401_23-11-09.png'
 如果要使用本機執行，會需要準備路徑給他存放。
 
 ### 1. 指定 repository 按下新增 runners
-![](/img/GitHub/action/4-1.png)
+
 ### 2. 新增前往創建資料夾
 按照github 上面的指令輸入即可，如果有錯誤訊息可以參考第一章節。
-![](/img/GitHub/action/4-2.png)
+
 ### 3. 打開 run.cmd
 用意是要確認有沒有有效執行。 
-![](/img/GitHub/action/4-4.png)
+
 
 ### 4. 撰寫 Github Actions
 ```yml
@@ -38,7 +38,7 @@ image = '/image/20230401_23-11-09.png'
 
 ##  Runner 執行路徑
 從圖片可以看到，這邊他會將當前檔案download下來，執行後都會在指定repository path，如果你要確認指定路徑使用pull 就會需要用```ls``` 或是 ```dir```確認。 
-![](/img/GitHub/action/4-3.png)
+
 
 
 ## 使用參數

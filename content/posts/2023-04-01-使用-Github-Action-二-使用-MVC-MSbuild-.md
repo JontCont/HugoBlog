@@ -58,23 +58,23 @@ jobs:
 MVC初始化的專案是沒有.pubxml相關的檔案，下方直接用快速方式創建.pubxml。
 
 1. 按下[建置]->[發佈]。
-![](/img/GitHub/action/2-01.png)
+
 
 2. 如果事先有發行過的可以再新增一個。
-![](/img/GitHub/action/2-02.png)
+
 
 3. 選擇資料夾，直接按下下一步、完成
-![](/img/GitHub/action/2-03.png)
-![](/img/GitHub/action/2-04.png)
+
+
 
 4. 產生完成，也可以用下拉式查看有哪些.pubxml
-![](/img/GitHub/action/2-05.png)
+
 
 ## 三、確認最後小問題
 1. NeGet 失效?
 NeGet 安裝失效問題，網路上很多有寫Nuget動作，但是怎樣做都會失敗。排除方式可以看右側選項，Github Action提供很方便的功能，可以直接使用安裝指令、寫法。
   
-![](/img/GitHub/action/2-06.png)
+
 
 2. msbuild 注意點
 msbuild 部分可以使用.csproj ，必須要留意```/p:DeployOnBuild=true```必須要一起填寫，```/p:PublishProfile=FolderProfile```就不會引發錯誤。

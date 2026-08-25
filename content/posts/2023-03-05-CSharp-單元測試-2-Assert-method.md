@@ -35,7 +35,7 @@ public class Comm
 
 下圖可以看到 [Project]Tests，[Project]會自動帶入你當前的Project名稱也相當的方便，其他欄位同等意思。
 
-![](/img/UnitTest/Test09.jpg)
+
 
 進行測試內容
 ```cs

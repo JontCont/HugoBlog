@@ -96,7 +96,7 @@ app.get("/users", (req, res) => {
 app.get("/users/:id", (req, res) => {
     const user = users.find(user => user.id === parseInt(req.params.id));
     if (!user) {
-        res.status(404).send("The user with the given ID was not found.");
+        return res.status(404).send("The user with the given ID was not found.");
     }
     res.json(user);
 });
@@ -113,7 +113,7 @@ app.post("/users", (req, res) => {
 app.put("/users/:id", (req, res) => {
     const user = users.find(user => user.id === parseInt(req.params.id));
     if (!user) {
-        res.status(404).send("The user with the given ID was not found.");
+        return res.status(404).send("The user with the given ID was not found.");
     }
     user.name = req.body.name;
     res.json(user);
@@ -122,7 +122,7 @@ app.put("/users/:id", (req, res) => {
 app.delete("/users/:id", (req, res) => {
     const user = users.find(user => user.id === parseInt(req.params.id));
     if (!user) {
-        res.status(404).send("The user with the given ID was not found.");
+        return res.status(404).send("The user with the given ID was not found.");
     }
     const index = users.indexOf(user);
     users.splice(index, 1);
@@ -130,7 +130,7 @@ app.delete("/users/:id", (req, res) => {
 });
 ```
 
-### 2-4 統一使用 json 格式
+### 2-3 統一使用 json 格式
 這邊我們統一使用 json 格式，所以我們需要在最上面加入以下程式碼。若沒有使用這段程式碼，會導致 req.body 無法使用。
 ```javascript
 app.use(require("express").json());

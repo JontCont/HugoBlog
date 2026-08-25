@@ -15,7 +15,6 @@ image = '/image/tiptop.png'
 
 # 使用方式
 TipTop 是一個非常舊版的 Web Api，執行上對新人非常不友善。下方是概念圖。
-![](/img/flower/tiptop.png)
 
 遇到不使用帳號的 API 往往都是使用內網方式串接，目前查詢呼叫方式使用 SoapUI 到目前是顯示XML比較好用的Software。
 

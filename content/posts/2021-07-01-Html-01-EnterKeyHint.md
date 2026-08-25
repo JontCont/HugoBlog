@@ -81,13 +81,13 @@ image = '/img/html-enterkeyHint/enterkeyHint.jpg'
 這幾些都是要focus在輸入框裡面就可以看得見，如下圖，這樣就會提升UI操作順暢。
 依據自己評估，決定在使用。
 
-![](/img/html-enterkeyHint/01.png)
-![](/img/html-enterkeyHint/02.png)
-![](/img/html-enterkeyHint/03.png)
-![](/img/html-enterkeyHint/04.png)
-![](/img/html-enterkeyHint/05.png)
-![](/img/html-enterkeyHint/06.png)
-![](/img/html-enterkeyHint/07.png)
+
+
+
+
+
+
+
 
 ## 題外話
 Stefan Judis 曾經在2020年有提到 Enterkeyhint ，有支援 Safari 瀏覽器(IOS)，有興趣的人可以實驗看看。FireFox事實上是有出現，只是不像是Chrome一樣馬上出現，必須要按下去(Enter)才會出現，使用上需要自己拿捏使用方式，以免被客戶要求強迫修改。

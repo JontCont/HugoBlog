@@ -66,6 +66,7 @@ namespace SignalR.Hubs{
 ```
 ![](/image/Snipaste_2022-07-19_21-28-02.png)
 
+
 ## 註冊SignalR服務
 以下註冊方式提供參考。
 ### net6.0
@@ -85,6 +86,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 ![](/image/Snipaste_2022-07-19_21-34-47.png)
+
 
 
 ## 創建html 頁面環境
@@ -113,4 +115,3 @@ app.UseEndpoints(endpoints =>
 </script>
 ```
 
-![](/img/dotnet/cs/signalr/Snipaste_2022-07-19_21-48-59.png)

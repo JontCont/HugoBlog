@@ -138,3 +138,10 @@ other = "回標籤總覽"
 
 [noPostsInTerm]
 other = "此標籤目前尚無文章。"
+
+[article]
+tableOfContents = "目錄"
+
+[article.codeblock]
+copy = "複製"
+copied = "已複製！"

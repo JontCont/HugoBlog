@@ -1,0 +1,23 @@
+# Planning Rules
+
+- Plan against the repository's existing Playwright version and conventions.
+- Keep a traceability table from discussion case IDs to Playwright case/module tags, spec titles, files, screenshot IDs, and tasks.
+- Assign the change an owning work item. Plan executable specs under `tests/test-cases/<work-item-id>/` unless an equivalent repository convention already exists.
+- Enclose every executable case in a `test.describe()` lifecycle boundary tagged `@workitem:<WORK-ITEM-ID>`.
+- Assign each executable case one immutable ID and native Playwright tags: `@case:<CASE-ID>` and `@module:<module>`.
+- Plan an entry in `tests/playwright-test-index.json` for every active case so an agent can resolve tests without scanning source text.
+- Identify superseded cases that must move from `active` to `archived`, including archive reason, date, and optional replacement case ID.
+- Keep work-item-specific code beside its specs. Move code into categorized `tests/shared/` directories only for cohesive behavior reused by multiple work items.
+- Do not require Page Object classes. Plan a focused `shared/ui/` function only for repeated or sufficiently complex UI operations.
+- Apply SOLID principles pragmatically and reject hidden global state, oversized shared interfaces, and unnecessary abstraction layers.
+- Define deterministic test data creation and cleanup before UI actions.
+- Identify authentication, feature flags, external services, and environment prerequisites.
+- Define how the target URL is supplied. Reuse repository `baseURL` and scripts; do not plan hard-coded origins or guessed ports.
+- Record required browser projects, viewports, locale, timezone, approved custom headers, and headed-only human steps.
+- Specify semantic locator intent without freezing unverified selector strings into the plan.
+- Define functional assertions separately from screenshot evidence.
+- For each screenshot, include viewport, stable capture condition, target, masks, and baseline policy.
+- Include the narrowest focused command for each executable task and broader validation only when shared behavior changes.
+- Keep disposable browser probes out of the implementation file list; convert only approved repeatable coverage into registered test cases.
+- Record risks and non-goals. Do not turn optional improvements into hidden implementation scope.
+- Tasks must be ordered, atomic, and verifiable. Use stable IDs such as `TASK-001`.

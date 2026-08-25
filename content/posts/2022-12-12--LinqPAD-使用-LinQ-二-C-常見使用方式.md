@@ -8,7 +8,6 @@ categories = ['後端技術', 'LINQPad']
 tags = ['LINQPad']
 keywords = []
 image = '/img/Linq-Use-Day01/bg.jpg'
-weight = 2
 +++
 
 # VSC - 所需的套件
@@ -116,7 +115,7 @@ namespace CS
 ```
 
 ## List
-List跟DataTable是差不多的問題，都要使用AsEnumerable()，過程中可能需要拿捏好取值得方式。
+DataTable 因為未原生實作 IEnumerable<DataRow>，需要使用 AsEnumerable() 才能使用 LINQ，而 List<T> 則可直接使用 LINQ。，過程中可能需要拿捏好取值得方式。
 這邊範例可以參考DataTable寫法。
 ```CS
 using CS;

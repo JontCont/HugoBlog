@@ -30,7 +30,7 @@ git reset --hard <commit id>
 以下兩種方式可以使用，但是要注意，請不要再重要分支這樣搞，不然會有很大的風險。
 ```cmd
 git push -f
-git push -force
+git push --force
 ```
 
 

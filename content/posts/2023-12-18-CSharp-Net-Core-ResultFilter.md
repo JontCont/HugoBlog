@@ -81,10 +81,10 @@ public void ConfigureServices(IServiceCollection services)
 
 ### 創建統一回傳格式
 
-接著我們就可以加入一個 RetrunJson 簡單的吃我們的格式。
+接著我們就可以加入一個 ReturnJson 簡單的吃我們的格式。
 
 ```cs
-   public class RetrunJson
+   public class ReturnJson
    {
        public dynamic? Data { get; set; }
        public int HttpCode { get; set; } = (int)HttpStatusCode.BadRequest;
@@ -94,7 +94,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### 四、使用 ResultFilter
 
-接著我們就可以在 ResultFilter 中進行處理並利用剛創建的 RetrunJson 一起使用，以下為範例。
+接著我們就可以在 ResultFilter 中進行處理並利用剛創建的 ReturnJson 一起使用，以下為範例。
 
 備註 : 
 OnResultExecuted : 在執行結果後進行處理。
@@ -106,15 +106,14 @@ public class ResultFilter : IResultFilter
 {
     public void OnResultExecuting(ResultExecutingContext context)
     {
-        // Do something before the action executes.
+        context.Result = new JsonResult(new ReturnJson { 
+            Data = context.Result,
+        });
     }
 
     public void OnResultExecuted(ResultExecutedContext context)
     {
-        context.Result = new JsonResult(new RetrunJson { 
-            Data = context.Result,
-        });
-
+        // Do something after the action executes.
     }
 }
 ```
@@ -162,14 +161,14 @@ public class ResultFilterAttribute : Attribute, IResultFilter
 {
     public void OnResultExecuting(ResultExecutingContext context)
     {
-        // Do something before the action executes.
+        context.Result = new JsonResult(new ReturnJson { 
+            Data = context.Result,
+        });
     }
 
     public void OnResultExecuted(ResultExecutedContext context)
     {
-        context.Result = new JsonResult(new RetrunJson { 
-            Data = context.Result,
-        });
+        // Do something after the action executes.
     }
 }
 ```

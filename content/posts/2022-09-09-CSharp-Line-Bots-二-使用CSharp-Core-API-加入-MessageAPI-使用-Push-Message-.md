@@ -8,7 +8,6 @@ categories = ['後端技術', 'C#', 'Line']
 tags = ['C#', 'Line']
 keywords = ['Net FrameWork', 'C#', 'Line']
 image = 'https://developers.line.biz/media/services/messaging-api-thumb1.png'
-weight = 1
 +++
 
 【C#】Line Bots使用方式會主要使用 C# 撰寫，如果是使用其他語言只僅供參考。繼上篇紀錄儲存相關資訊後，需要準備一個 [ngrok](/2022/08/11/Note/ngrok/) 即可。
@@ -92,7 +91,7 @@ app.UseCors();
 ## 三、Line Message API 設定
 接下來，只要在[Line Developer](https://developers.line.biz/zh-hant/) 設定。
 回到我們的Line Developer ，把 ngrok Url 加入在 webhook setting 當中，務必別忘了加入 ```Message```名稱。 
-![](/img/dotnet/Line/Snipaste_2022-09-09_17-16-33.png)
+
 
 設定完成後，建議點選 Verify 按鈕驗證API是不是有通，按下按鈕後出現 ```Success ```訊息代表順利完成了。題外話，官方網POST動作只看能不能傳回來，所以範例其實沒有特別撰寫內容。
 

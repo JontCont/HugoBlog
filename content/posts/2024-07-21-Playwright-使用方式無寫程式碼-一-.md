@@ -30,11 +30,11 @@ image = '/image/20240720_23-44-39.png'
 
 ### 二、安裝指令
 - 安裝 Playwright 套件 : ```npm install playwright```
-- 安裝 Playwright 瀏覽器 : ```npm playwright install```
+- 安裝 Playwright 瀏覽器 : ```npx playwright install```
 - (選用) 安裝指定 Playwright 瀏覽器 
-  1. ```npm playwright install webkit```
-  2. ```npm playwright install firefox```
-  3. ```npm playwright install chromium```
+  1. ```npx playwright install webkit```
+  2. ```npx playwright install firefox```
+  3. ```npx playwright install chromium```
 
 ### 三、必備套件
 1. Playwright Test for VSCode
@@ -66,6 +66,7 @@ image = '/image/20240720_23-44-39.png'
 如果執行好測試案例就直接執行測試案例就可以看到結果。
 
 ![](/image/20240720_23-42-44.png)
+
 
 ---
 

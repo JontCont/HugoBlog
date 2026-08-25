@@ -1,0 +1,35 @@
+{{/* Search Modal Overlay (Command Palette) */}}
+<div class="search-modal" id="search-modal" hidden role="dialog" aria-modal="true" aria-label="{{ T "siteSearch" }}">
+  <div class="search-modal__backdrop" id="search-modal-backdrop"></div>
+  <div class="search-modal__container">
+    <div class="search-modal__card card-surface">
+      <form class="search-modal__form" action="/search/" method="get" role="search">
+        <div class="search-modal__input-wrap">
+          <svg class="search-modal__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="search" name="q" id="search-modal-input" class="search-modal__input"
+            placeholder="{{ T "searchPlaceholder" | default "搜尋文章、標籤、技術關鍵字…" }}" autocomplete="off" autocorrect="off" aria-label="{{ T "searchKeyword" }}">
+          <div class="search-modal__shortcuts">
+            <kbd class="search-modal__kbd">ESC</kbd>
+          </div>
+          <button type="button" class="search-modal__close" id="search-modal-close" aria-label="{{ T "closeSearch" }}">✕</button>
+        </div>
+      </form>
+
+      <div class="search-modal__body">
+        <div id="search-modal-status" class="search-modal__status"></div>
+        <div id="search-modal-results" class="search-modal__results"></div>
+      </div>
+
+      <div class="search-modal__footer">
+        <div class="search-modal__tips">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> 選擇</span>
+          <span><kbd>↵</kbd> 開啟</span>
+          <span><kbd>ESC</kbd> 關閉</span>
+        </div>
+        <a href="/search/" class="search-modal__full-link">全頁搜尋 →</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -53,4 +53,3 @@ Inspector 有提供 Debug Tools 功能，可以查看 Log。
 1. 開啟 Inspector 介面 : ```npx playwright test "test-1.spec.ts"  --debug```
 2. 指定 test function : ```npx playwright test "test-1.spec.ts" -g "sample$" --debug```
 3. 不開啟報告 : ```npx playwright test "test-1.spec.ts" -g "sample$" --debug --reporter=null```
-

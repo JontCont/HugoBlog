@@ -22,6 +22,7 @@ Images 作為映像檔，基底需要Containers 來執行。使用image 可以�
 搜尋 : **hello-world** 。內容內會有很多相關的hello-world，可以依據需求選擇需要的名稱執行、輸入。
 ![](/image/20221128_14-36-04.png)
 
+
 ### 建立 Image - Hello World
 簡單敘述 Docker 創建方式。如果Docker內容已經有存在Hello World 是不會再產生的二個Image (Hello World) ，從下圖可以得到結果。
 執行方式
@@ -29,6 +30,7 @@ Images 作為映像檔，基底需要Containers 來執行。使用image 可以�
 docker run hello-world
 ```
 ![](/image/20221128_14-47-20.png)
+
 
 ### Docker Desktop - Image / Containers
 從Docker Desktop 可以看得出來，只要執行 ```docker run hello-world``` Containers 會不斷的產生出來，當中結論是
@@ -38,10 +40,13 @@ docker run hello-world
 ![](/image/20221128_14-51-23.png)
 ![](/image/20221128_14-51-35.png)
 
+![](/image/20221128_15-00-00.png)
+
+
 > [!NOTE]
 > ### 查詢狀態
 > 指令可以直接看到Container 狀態，可以得知Images 對象。
-> ![](/image/20221128_15-00-00.png)
+> 
 
 ## Containers 容器
 
@@ -52,6 +57,7 @@ docker rm [ContainerID]
 docker rm [names] 
 ```
 ![](/image/20221128_15-09-23.png)
+
 
 ### 只執行Container
 執行方式如下。下方的 ```-i -t ``` 意思是需要Container互動需要加入的參數。
