@@ -571,8 +571,3 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
-
-/* ── Init dropdowns after DOM ready ─────────────────────── */
-document.addEventListener('DOMContentLoaded', function () {
-  initializeDropdowns();
-});

@@ -3,7 +3,7 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="page-kind-{{ .Kind }}{{ with .Section }} section-{{ . | urlize }}{{ end }}">
+<body class="page-kind-{{ .Kind }}{{ with .Section }} section-{{ . | urlize }}{{ end }}{{ if eq .Layout "novel-library" }} novel-library-page{{ end }}">
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
   <header class="site-header">
     {{ partial "header.html" . }}
@@ -12,9 +12,11 @@
     <main class="site-main" id="main-content">
       {{ block "main" . }}{{ end }}
     </main>
+    {{ if ne .Layout "novel-library" }}
     <footer class="site-footer">
       {{ partial "footer.html" . }}
     </footer>
+    {{ end }}
   </div>
   {{ partial "search-modal.html" . }}
   {{ if or (.Store.Get "hasMermaid") (strings.Contains .Content "mermaid") }}
