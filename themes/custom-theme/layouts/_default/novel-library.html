@@ -1,5 +1,12 @@
 {{ define "main" }}
   <section class="novel-library-shell">
-    {{ .Content }}
+    {{ with site.Params.novelReaderURL }}
+      <iframe
+        class="novel-reader-frame"
+        src="{{ . }}"
+        title="{{ $.Title }}"
+        loading="eager"
+      ></iframe>
+    {{ end }}
   </section>
 {{ end }}

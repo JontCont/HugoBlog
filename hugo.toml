@@ -165,6 +165,7 @@ defaultContentLanguage = 'zh-tw'
   mainSections = ['posts']
   description  = '分享技術筆記與開發心得'
   rssFullContent = true
+  novelReaderURL = 'https://jontcont.github.io/blog-novelist/reader/'
 
   [params.author]
     name   = 'John Conte'
